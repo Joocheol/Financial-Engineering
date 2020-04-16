@@ -5,11 +5,11 @@ class Replication(Scene):
 
         text_010 = TextMobject("1. Replication")
 
-#        self.play(GrowFromCenter(text_010))
-#        self.wait(2)
+        self.play(GrowFromCenter(text_010))
+        self.wait(2)
 
-#        self.play(FadeOut(text_010))
-#        self.wait(1)
+        self.play(FadeOut(text_010))
+        self.wait(1)
 
 ############
         game1 = TexMobject("10")
@@ -26,21 +26,22 @@ class Replication(Scene):
         text_020 = TextMobject("This is the first game.")
         text_020.to_edge(DOWN)
 
-#        self.play(Write(text_020))
-#        self.play(Write(game1))
-#        self.play(GrowArrow(arrow1))
-#        self.play(Write(game1_up))
-#        self.play(Write(game1))
-#        self.play(GrowArrow(arrow2))
-#        self.play(Write(game1_down))
-#        self.play(FadeOut(arrow1), FadeOut(arrow2))
+        self.play(Write(text_020))
+        self.play(Write(game1))
+        self.play(GrowArrow(arrow1))
+        self.play(Write(game1_up))
+        self.play(Write(game1))
 
-#        self.play(Transform(game1.copy(), game1.scale(0.7).move_to([-6,2,0])))
-#        self.play(Transform(game1_up.copy(), game1_up.scale(0.7).move_to([-4,3,0])))
-#        self.play(Transform(game1_down.copy(), game1_down.scale(0.7).move_to([-4,1,0])))
+        self.play(GrowArrow(arrow2))
+        self.play(Write(game1_down))
+        self.play(FadeOut(arrow1), FadeOut(arrow2))
+
+        self.play(Transform(game1.copy(), game1.scale(0.7).move_to([-6,2,0])))
+        self.play(Transform(game1_up.copy(), game1_up.scale(0.7).move_to([-4,3,0])))
+        self.play(Transform(game1_down.copy(), game1_down.scale(0.7).move_to([-4,1,0])))
         
 
-#        self.play(FadeOut(text_020))
+        self.play(FadeOut(text_020))
 
 
         game2 = TexMobject("9")
@@ -54,20 +55,20 @@ class Replication(Scene):
         text_030 = TextMobject("This is the second game.")
         text_030.to_edge(DOWN)
 
-#        self.play(Write(text_030))
-#        self.play(Write(game2))
-#        self.play(GrowArrow(arrow1))
-#        self.play(Write(game2_up))
-#        self.play(Write(game2))
-#        self.play(GrowArrow(arrow2))
-#        self.play(Write(game2_down))
-#        self.play(FadeOut(arrow1), FadeOut(arrow2))
+        self.play(Write(text_030))
+        self.play(Write(game2))
+        self.play(GrowArrow(arrow1))
+        self.play(Write(game2_up))
+        self.play(Write(game2))
+        self.play(GrowArrow(arrow2))
+        self.play(Write(game2_down))
+        self.play(FadeOut(arrow1), FadeOut(arrow2))
 
-#        self.play(Transform(game2.copy(), game2.scale(0.7).move_to([-1,2,0])))
-#        self.play(Transform(game2_up.copy(), game2_up.scale(0.7).move_to([1,3,0])))
-#        self.play(Transform(game2_down.copy(), game2_down.scale(0.7).move_to([1,1,0])))
+        self.play(Transform(game2.copy(), game2.scale(0.7).move_to([-1,2,0])))
+        self.play(Transform(game2_up.copy(), game2_up.scale(0.7).move_to([1,3,0])))
+        self.play(Transform(game2_down.copy(), game2_down.scale(0.7).move_to([1,1,0])))
         
-#        self.play(FadeOut(text_030))
+        self.play(FadeOut(text_030))
 
         game3 = TexMobject("?")
         game3_up = TexMobject("22")
@@ -80,19 +81,19 @@ class Replication(Scene):
         text_040 = TextMobject("This is the third game, which we are interested in.")
         text_040.to_edge(DOWN)
 
-#        self.play(Write(text_040))
-#        self.play(Write(game3))
-#        self.play(GrowArrow(arrow1))
-#        self.play(Write(game3_up))
-#        self.play(Write(game3))
-#        self.play(GrowArrow(arrow2))
-#        self.play(Write(game3_down))
-#        self.play(FadeOut(arrow1), FadeOut(arrow2))
+        self.play(Write(text_040))
+        self.play(Write(game3))
+        self.play(GrowArrow(arrow1))
+        self.play(Write(game3_up))
+        self.play(Write(game3))
+        self.play(GrowArrow(arrow2))
+        self.play(Write(game3_down))
+        self.play(FadeOut(arrow1), FadeOut(arrow2))
 
-#        self.play(Transform(game3.copy(), game3.scale(0.7).move_to([4,2,0])))
-#        self.play(Transform(game3_up.copy(), game3_up.scale(0.7).move_to([6,3,0])))
-#        self.play(Transform(game3_down.copy(), game3_down.scale(0.7).move_to([6,1,0])))
-#        self.play(FadeOut(text_040))
+        self.play(Transform(game3.copy(), game3.scale(0.7).move_to([4,2,0])))
+        self.play(Transform(game3_up.copy(), game3_up.scale(0.7).move_to([6,3,0])))
+        self.play(Transform(game3_down.copy(), game3_down.scale(0.7).move_to([6,1,0])))
+        self.play(FadeOut(text_040))
 
 ##########
 
@@ -117,13 +118,13 @@ class Replication(Scene):
         rect3.set_color(YELLOW)
 
         
-#        self.play(ShowCreation(rect1))
-#        self.play(Write(text_First_we_focus_on_these_numbers))
-#        self.wait(2)
-#        self.play(FadeOut(text_First_we_focus_on_these_numbers))
-#        self.play(Write(text_These_two_numbers_repesent_the_payoff_of_the_first_game))
-#        self.wait(2)
-#        self.play(FadeOut(text_These_two_numbers_repesent_the_payoff_of_the_first_game))
+        self.play(ShowCreation(rect1))
+        self.play(Write(text_First_we_focus_on_these_numbers))
+        self.wait(2)
+        self.play(FadeOut(text_First_we_focus_on_these_numbers))
+        self.play(Write(text_These_two_numbers_repesent_the_payoff_of_the_first_game))
+        self.wait(2)
+        self.play(FadeOut(text_These_two_numbers_repesent_the_payoff_of_the_first_game))
 
         text_Now_these_two_numbers_are_the_payoff_of_the_second_game = TextMobject(
             "Now these two numbers are the payoff of the second game."
@@ -134,13 +135,13 @@ class Replication(Scene):
         )
         text_With_these_two_payoffs_we_can_make_any_payoff.to_edge(DOWN)
         
-#        self.play(ShowCreation(rect2))
-#        self.play(Write(text_Now_these_two_numbers_are_the_payoff_of_the_second_game))
-#        self.wait(2)
-#        self.play(FadeOut(text_Now_these_two_numbers_are_the_payoff_of_the_second_game))
-#        self.play(Write(text_With_these_two_payoffs_we_can_make_any_payoff))
-#        self.wait(3)
-#        self.play(FadeOut(text_With_these_two_payoffs_we_can_make_any_payoff), FadeOut(rect1), FadeOut(rect2))
+        self.play(ShowCreation(rect2))
+        self.play(Write(text_Now_these_two_numbers_are_the_payoff_of_the_second_game))
+        self.wait(2)
+        self.play(FadeOut(text_Now_these_two_numbers_are_the_payoff_of_the_second_game))
+        self.play(Write(text_With_these_two_payoffs_we_can_make_any_payoff))
+        self.wait(3)
+        self.play(FadeOut(text_With_these_two_payoffs_we_can_make_any_payoff), FadeOut(rect1), FadeOut(rect2))
 
         text_For_example = TextMobject(
             "For example,"
@@ -194,8 +195,8 @@ class Replication(Scene):
 
 
 
-        #self.play(ShowCreation(rect3.move_to([6, 2, 0])))
-        #self.wait(2)
+        # self.play(ShowCreation(rect3.move_to([6, 2, 0])))
+        # self.wait(2)
 
 ##########
 
