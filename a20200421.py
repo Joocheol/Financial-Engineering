@@ -27,6 +27,12 @@ class Grid(VGroup):
 class a20200421(Scene):
     def construct(self):
 
+        image1 = ImageMobject("mnist.png")
+        image2 = ImageMobject("mnist.png")
+        image2.move_to(LEFT*4)
+        self.play(FadeIn(image1))
+        self.play(Transform(image1, image2))
+
         # temp = []
         # node = [Circle(radius=0.3) for i in range(3)]
         # for i in range(3):
@@ -40,34 +46,58 @@ class a20200421(Scene):
         # self.play(ShowCreation(brace1))
 
 
-        grid = Grid(10, 10, height=3, width=3)
-        brace1 = Brace(grid, LEFT, buff=SMALL_BUFF)
+        grid = Grid(14, 14, height=2, width=2)
+        grid.move_to(LEFT*4)
+        brace1 = Brace(grid, RIGHT, buff=SMALL_BUFF)
         brace2 = Brace(grid, UP, buff=SMALL_BUFF)
         self.play(ShowCreation(grid))
         self.play(ShowCreation(brace1), ShowCreation(brace2))
         text1 = TextMobject("28")
         text2 = TextMobject("28")
-        text1.next_to(brace1, LEFT)
+        text1.next_to(brace1, RIGHT)
         text2.next_to(brace2, UP)
         self.play(ShowCreation(text1), ShowCreation(text2))
 
-        rect_UL = [Rectangle(height=1, width=1) for _ in range(5)]
-        for i in range(5):
-            rect_UL[i].move_to(UP*3+(LEFT*(5-i))+[-.3,0,0]).scale(0.5)
-            self.play(Transform(grid.copy(), rect_UL[i]), run_time = 0.5)
+        rect_UP = [Rectangle(height=1, width=1) for _ in range(3)]
+        for i in range(3):
+            rect_UP[i].move_to(UP*(3-i)+LEFT*0).scale(0.7)
+            self.play(Transform(grid.copy(), rect_UP[i]), run_time = 0.5)
 
-        text3 = TexMobject("\\cdots")
-        text3.move_to(UP*3)
+        text3 = TexMobject("\\vdots")
+        text3.move_to(LEFT*0)
         self.play(Write(text3))
-        rect_UR = [Rectangle(height=1, width=1) for _ in range(5)]
-        for i in range(5):
-            rect_UR[i].move_to(UP*3+RIGHT*(i)+[1,0,0]).scale(0.5)
-            self.play(Transform(grid.copy(), rect_UR[i]), run_time = 0.5)
+        rect_DOWN = [Rectangle(height=1, width=1) for _ in range(3)]
+        for i in range(3):
+            rect_DOWN[i].move_to(DOWN*(i+1)+LEFT*0).scale(0.7)
+            self.play(Transform(grid.copy(), rect_DOWN[i]), run_time = 0.5)
 
-        brace3 = Brace(VGroup(rect_UL[0], text3, rect_UR[4]), UP, buff=SMALL_BUFF)
+        brace3 = Brace(VGroup(rect_UP[0], text3, rect_DOWN[2]), RIGHT, buff=SMALL_BUFF)
         self.play(ShowCreation(brace3))
 
-        text4 = TextMobject("6000")
-        text4.next_to(brace3, UP)
-        self.play(Write(text4))
+        text4 = TextMobject("60,000")
+        text4_1 = TextMobject("training")
+        text4.next_to(brace3, RIGHT)
+        text4_1.next_to(text4, DOWN)
+        self.play(Write(text4), Write(text4_1))
 
+        rect_UP = [Rectangle(height=1, width=1) for _ in range(3)]
+        for i in range(3):
+            rect_UP[i].move_to(UP*(3-i)+RIGHT*3.5).scale(0.7)
+            self.play(Transform(grid.copy(), rect_UP[i]), run_time = 0.5)
+
+        text3 = TexMobject("\\vdots")
+        text3.move_to(RIGHT*3.5)
+        self.play(Write(text3))
+        rect_DOWN = [Rectangle(height=1, width=1) for _ in range(3)]
+        for i in range(3):
+            rect_DOWN[i].move_to(DOWN*(i+1)+RIGHT*3.5).scale(0.7)
+            self.play(Transform(grid.copy(), rect_DOWN[i]), run_time = 0.5)
+
+        brace3 = Brace(VGroup(rect_UP[0], text3, rect_DOWN[2]), RIGHT, buff=SMALL_BUFF)
+        self.play(ShowCreation(brace3))
+
+        text4 = TextMobject("10,000")
+        text4_1 = TextMobject("testing")
+        text4.next_to(brace3, RIGHT)
+        text4_1.next_to(text4, DOWN+RIGHT*0)
+        self.play(Write(text4), Write(text4_1))
