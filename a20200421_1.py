@@ -42,6 +42,6 @@ class a20200421(Scene):
             grid1[i].set_color(WHITE)
             self.play(ShowCreation(grid1[i]))
             
-        #grid_g1 = VGroup(*grid1)
+        
 
         
