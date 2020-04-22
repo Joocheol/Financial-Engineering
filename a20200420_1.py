@@ -26,7 +26,7 @@ class a20200420_1(Scene):
             "\\Big[", "p^2", "C_{uu}", "+", "2p(1-p)", "C_{ud}", "+", "(1-p)^2", "C_{dd}", "\\Big]"  
         )
 
-        formula_2.move_to(UP*1.5).scale(0.7)
+        formula_2.move_to(UP*1).scale(0.7)
         
         self.play(Write(formula_2))
         self.wait()
@@ -38,7 +38,8 @@ class a20200420_1(Scene):
         
         formula_3 = TexMobject(
             "C", "=", "{1 \\over r^{n} }", 
-            "\\Big[", "p^{n}", "C_{uu...u}", "+", "{n \\choose j}", "C_{ud}", "+", "(1-p)^2", "C_{dd}", "\\Big]"  
+            "\\Big[", "p^{n}", "C_{uu...u}", "+", "\\cdots", "+ {n \\choose j}", "C_{u...d} + ", "\\cdots", 
+            "+", "(1-p)^n", "C_{dd...d}", "\\Big]"  
         )
 
         formula_3.move_to(DOWN*2.5).scale(0.7)
