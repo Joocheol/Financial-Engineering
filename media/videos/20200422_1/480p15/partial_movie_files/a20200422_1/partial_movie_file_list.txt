@@ -1,0 +1,2 @@
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/20200422_1/480p15/partial_movie_files/a20200422_1/00000.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/20200422_1/480p15/partial_movie_files/a20200422_1/00001.mp4'
