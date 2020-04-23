@@ -38,7 +38,7 @@ class a20200420_1(Scene):
         
         formula_3 = TexMobject(
             "C", "=", "{1 \\over r^{n} }", 
-            "\\Big[", "p^{n}", "C_{uu...u}", "+", "{n \\choose j}", "C_{ud}", "+", "(1-p)^2", "C_{dd}", "\\Big]"  
+            "\\Big[", "p^{n}", "C_{uu...u}", "+ \\cdots +", "{n \\choose j} p^j (1-p)^{n-j}", "C_{u...d}", "+ \\cdots +", "(1-p)^n", "C_{dd...d}", "\\Big]"  
         )
 
         formula_3.move_to(DOWN*2.5).scale(0.7)
