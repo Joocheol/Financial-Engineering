@@ -84,7 +84,7 @@ class a20200419(Scene):
 
         self.play(Transform(C, CC), Transform(C_u, CC_u), Transform(C_d, CC_d))
 
-        condition = TexMobject(" d < r < u")
+        condition = TexMobject("d < r < u")
         self.play(Write(condition))
         self.wait(2)
         
