@@ -24,18 +24,19 @@ class Grid(VGroup):
                 [self.width / 2., y - self.height / 2., 0]
             ))
 
-r = 1
-up_node = 15
-down_node = 10
-
-class a20200426_1(Scene):
+class a_001(Scene):
     def construct(self):
+
+        C = Matrix([0, 100, -100])
+        F = Matrix([1, 2, 3])
+
+        self.play(Write(C))
         
-        grid = []
-        for i in range(25):
-            grid.append(Grid(1,1, height=0.5, width=0.5))
-            grid[i].move_to([8*(i-25)/25+4, 3, 0]).scale(0.6)
-            self.play(ShowCreation(grid[i]), run_time=0.1)
+        # grid = []
+        # for i in range(25):
+        #     grid.append(Grid(1,1, height=0.5, width=0.5))
+        #     grid[i].move_to([8*(i-25)/25+4, 3, 0]).scale(0.6)
+        #     self.play(ShowCreation(grid[i]), run_time=0.1)
 
 class Arrow_Debreu(Scene):
     def construct(self):
