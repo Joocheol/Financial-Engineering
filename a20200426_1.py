@@ -27,9 +27,12 @@ from manimlib.imports import *
 class a001(Scene):
     def construct(self):
 
-        #C = Matrix([0, 100, -100])
-        F = Matrix([0,1,2,3,4], element_alignment_corner=DOWN)
+        C = Matrix([0, 100, 37.8, -17.8], element_alignment_corner=DOWN)
+        F = Matrix([32,212,100,0], element_alignment_corner=DOWN)
+        C.move_to(LEFT)
+        F.next_to(C, RIGHT)
 
+        self.play(Write(C))
         self.play(Write(F))
         
         # grid = []
