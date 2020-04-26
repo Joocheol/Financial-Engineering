@@ -24,16 +24,68 @@ from manimlib.imports import *
 #                 [self.width / 2., y - self.height / 2., 0]
 #             ))
 
+C_list = [0, 37.8, -17.8, -50]
+F_list = [32.0, 100, 0, -58]
+
 class a001(Scene):
     def construct(self):
 
-        C = Matrix([0, 100, 37.8, -17.8], element_alignment_corner=DOWN)
-        F = Matrix([32,212,100,0], element_alignment_corner=DOWN)
+        C = Matrix(C_list, element_alignment_corner=DOWN)
+        F = Matrix(F_list, element_alignment_corner=DOWN)
         C.move_to(LEFT)
         F.next_to(C, RIGHT)
 
         self.play(Write(C))
         self.play(Write(F))
+
+class a002(GraphScene):
+
+    CONFIG = {
+    "x_min" : -100,
+    "x_max" : 100,
+    "x_tick_frequency": 10,
+    "y_min" : -100,
+    "y_max" : 120,
+    "y_tick_frequency": 10,
+    "graph_origin" : ORIGIN,
+    "function_color" : RED,
+    "axes_color" : GREEN,
+    "x_labeled_nums" :range(-100,101,50), 
+    #"y_labeled_nums" :range(-10,120,50),    
+    }
+
+    def construct(self):
+        self.setup_axes(animate=True
+
+            )
+
+        
+        for i, j in zip(C_list, F_list):
+            point = Dot().move_to(self.coords_to_point(i,j)).set_color(YELLOW)
+            self.play(ShowCreation(point))
+
+        #a = self.coords_to_point(10, 20)
+        #func_graph=self.get_graph(self.func_to_graph,self.function_color)
+        #func_graph2=self.get_graph(self.func_to_graph2)
+        #vert_line = self.get_vertical_line_to_graph(TAU,func_graph,color=YELLOW)
+        #graph_lab = self.get_graph_label(func_graph, label = "\\cos(x)")
+        #graph_lab2=self.get_graph_label(func_graph2,label = "\\sin(x)", x_val=-10, direction=UP/2)
+        #two_pi = TexMobject("x = 2 \\pi")
+        #label_coord = self.input_to_graph_point(TAU,func_graph)
+        #two_pi.next_to(label_coord,RIGHT+UP)
+     
+        #self.play(ShowCreation(func_graph),ShowCreation(func_graph2))
+        #self.play(ShowCreation(vert_line), ShowCreation(graph_lab), 
+        #    ShowCreation(graph_lab2),ShowCreation(two_pi))
+     
+       # point = Dot().move_to(a)
+        #self.play(ShowCreation(point))
+
+    def func_to_graph(self,x):
+        return np.cos(x)
+     
+    def func_to_graph2(self,x):
+        return np.sin(x)
         
         # grid = []
         # for i in range(25):
@@ -41,177 +93,95 @@ class a001(Scene):
         #     grid[i].move_to([8*(i-25)/25+4, 3, 0]).scale(0.6)
         #     self.play(ShowCreation(grid[i]), run_time=0.1)
 
-# class Arrow_Debreu(Scene):
-#     def construct(self):
+class a003(Scene):
+    def construct(self):
 
-#         text_010 = TextMobject("2. Arrow-Debreu Security")
+        eqn = TexMobject("""
+            \\hat{\\beta}_{1} = { {\\sum ( x_i - \\bar{x} ) ( y_i - \\bar{y} ) } 
+            \\over { \\sum ( x_i - \\bar{x} )^2  } }
+        """)
 
-#         self.play(GrowFromCenter(text_010))
-#         self.wait(2)
+        self.play(Write(eqn))
 
-#         self.play(FadeOut(text_010))
-#         self.wait(1)
+class a004(Scene):
+    def construct(self):
 
-#         game1 = TexMobject("10")
-#         game1.scale(0.7).move_to([-6,2,0])
-#         game1_up = TexMobject("11")
-#         game1_up.scale(0.7).move_to([-4,3,0])
-#         game1_down = TexMobject("11")
-#         game1_down.scale(0.7).move_to([-4,1,0])
+        text0 = TextMobject("$x$")
+        text0.move_to(UP*3)
+        self.play(Write(text0))
 
-#         game2 = TexMobject("9")
-#         game2.scale(0.7).move_to([-1,2,0])
-#         game2_up = TexMobject("22")
-#         game2_up.scale(0.7).move_to([1,3,0])
-#         game2_down = TexMobject("0")
-#         game2_down.scale(0.7).move_to([1,1,0])
+        text1 = TextMobject("$y = f(x)$")
+        text1
+        self.play(Write(text1))
 
-#         game3 = TexMobject("?")
-#         game3.scale(0.7).move_to([4,2,0])
-#         game3_up = TexMobject("22")
-#         game3_up.scale(0.7).move_to([6,3,0])
-#         game3_down = TexMobject("11")
-#         game3_down.scale(0.7).move_to([6,1,0])
+        text2 = TextMobject("$y$")
+        text2.move_to(DOWN*3)
+        self.play(Write(text2))
 
-#         self.play(
-#             Write(game1), Write(game1_up), Write(game1_down),
-#             Write(game2), Write(game2_up), Write(game2_down),
-#             Write(game3), Write(game3_up), Write(game3_down)
-#         )
-#         self.wait(1)
 
-#         text_020 = TextMobject("Now we want to price a new product.")
-#         text_020.to_edge(DOWN)
+        r = 1
+        top_node = 1
+        up_node = 15
+        down_node = 3
 
-#         self.play(Write(text_020))
-
-#         u1 = TextMobject("?")
-#         u1_up = TextMobject("1")
-#         u1_down = TextMobject("0")
-#         u1.move_to(LEFT+DOWN)
-#         u1_up.move_to(RIGHT)
-#         u1_down.move_to(RIGHT+DOWN*2)
-
-#         arrow1 = Arrow(u1.get_right(), u1_up.get_left(), buff=0.5)
-#         arrow2 = Arrow(u1.get_right(), u1_down.get_left(), buff=0.5)
-
-#         u1_all = VGroup(u1, u1_up, u1_down, arrow1, arrow2)
-#         self.play(
-#             Write(u1_all)
-#         )
-#         self.wait(1)
-
-#         text_030 = TextMobject("We know how to build the equations.")
-#         text_030.to_edge(DOWN)
-
-#         self.play(FadeOut(text_020))
-#         self.play(Write(text_030))
-
-#         formula_010 = TexMobject(r"""
-#             \begin{bmatrix} 11 \\ 11 \end{bmatrix}
-#             \times x_1 +
-#             \begin{bmatrix} 22 \\ 0 \end{bmatrix}
-#             \times x_2
-#             =
-#             \begin{bmatrix} 1 \\ 0 \end{bmatrix}        
-#         """)
-#         formula_010.move_to(DOWN)
-
-#         self.play(ReplacementTransform(u1_all, formula_010))
-
-#         text_040 = TextMobject("By solving the equations, we get")
-#         text_040.to_edge(DOWN)
-
-#         self.play(FadeOut(text_030))
-#         self.play(Write(text_040))
-
-#         formula_020 = TexMobject(r"""
-#             x_1 = 0, \quad x_2 = {1 \over 22}         
-#         """)
-#         formula_020.move_to(DOWN)
-
-#         self.play(ReplacementTransform(formula_010, formula_020))
-
-#         text_050 = TextMobject("So the price of the new product is $9 \\over 22$.")
-#         text_050.to_edge(DOWN)
-
-#         self.play(FadeOut(text_040))
-#         self.play(Write(text_050))
-
-#         formula_030 = TexMobject(r"""
-#             10 \times 0 + 9 \times {1 \over 22} = {9 \over 22}         
-#         """)
-#         formula_030.move_to(DOWN)
-
-#         self.play(ReplacementTransform(formula_020, formula_030))
-#         self.play(FadeOut(formula_030))
-#         self.play(FadeOut(text_050))
+        layer1 = []
+        for i in range(up_node):
+            layer1.append(Circle(radius=r))
+            layer1[i].move_to([0.5*(i-(up_node-1)/2.), 0, 0]).scale(0.2).set_color(WHITE)
+        #    self.play(ShowCreation(layer1[i]), run_time=0.1)
+        layer1_g = VGroup(*layer1)
+        self.play(Transform(text1, layer1_g))
         
-# ############
- 
-#         text_060 = TextMobject("Another try for another new product.")
-#         text_060.to_edge(DOWN)
 
-#         self.play(Write(text_060))
+        # layer0 = []
+        # for i in range(top_node):
+        #     layer0.append(Circle(radius=r))
+        #     layer0[i].move_to([0.5*(i-(top_node-1)/2.), 3, 0]).scale(0.2).set_color(WHITE)
+        #     self.play(ShowCreation(layer0[i]), run_time=0.1)
 
-#         u2 = TextMobject("?")
-#         u2_up = TextMobject("0")
-#         u2_down = TextMobject("1")
-#         u2.move_to(LEFT+DOWN)
-#         u2_up.move_to(RIGHT)
-#         u2_down.move_to(RIGHT+DOWN*2)
+        
 
-#         arrow1 = Arrow(u2.get_right(), u2_up.get_left(), buff=0.5)
-#         arrow2 = Arrow(u2.get_right(), u2_down.get_left(), buff=0.5)
+        
 
-#         u2_all = VGroup(u2, u2_up, u2_down, arrow1, arrow2)
-#         self.play(
-#             Write(u2_all)
-#         )
-#         self.wait(1)
+        # lines = []
+        # for i in range(top_node):
+        #     for j in range(up_node):
+        #         s = layer0[i].get_center() # grid[i].get_center()
+        #         e = layer1[j].get_center()
+        #         lines.append(Line(s, e).set_stroke(width=0.5))
 
-#         text_070 = TextMobject("Similar, but different equations.")
-#         text_070.to_edge(DOWN)
+        # lines_g = VGroup(*lines)
+        # self.play(ShowCreation(lines_g))
+           
 
-#         self.play(FadeOut(text_060))
-#         self.play(Write(text_070))
+        # layer2 = []
+        # for i in range(down_node):
+        #     layer2.append(Circle(radius=r))
+        #     layer2[i].move_to([0.5*(i-(down_node-1)/2.), -3, 0]).scale(0.2).set_color(WHITE)
+        #     self.play(ShowCreation(layer2[i]), run_time=0.1)
 
-#         formula_040 = TexMobject(r"""
-#             \begin{bmatrix} 11 \\ 11 \end{bmatrix}
-#             \times x_1 +
-#             \begin{bmatrix} 22 \\ 0 \end{bmatrix}
-#             \times x_2
-#             =
-#             \begin{bmatrix} 0 \\ 1 \end{bmatrix}        
-#         """)
-#         formula_040.move_to(DOWN)
+        # lines = []
+        # for i in range(up_node):
+        #     for j in range(down_node):
+        #         s = layer1[i].get_center()
+        #         e = layer2[j].get_center()
+        #         lines.append(Line(s, e).set_stroke(width=0.5))
 
-#         self.play(ReplacementTransform(u2_all, formula_040))
+        # lines_g = VGroup(*lines)
+        # self.play(ShowCreation(lines_g))
 
-#         text_080 = TextMobject("By solving the equations, we get")
-#         text_080.to_edge(DOWN)
+        # layer2_g = VGroup(*layer2)
 
-#         self.play(FadeOut(text_070))
-#         self.play(Write(text_080))
+        # down_node = 1
 
-#         formula_050 = TexMobject(r"""
-#             x_1 = {1 \over 11}, \quad x_2 = -{1 \over 22}        
-#         """)
-#         formula_050.move_to(DOWN)
+        # layer2 = []
+        # for i in range(down_node):
+        #     layer2.append(Circle(radius=r))
+        #     layer2[i].move_to([0.5*(i-(down_node-1)/2.), -3, 0]).scale(0.2).set_color(WHITE)
+        # #    self.play(ShowCreation(layer2[i]), run_time=0.1)
 
-#         self.play(ReplacementTransform(formula_040, formula_050))
+        # layer2_g2 = VGroup(*layer2)
+        # self.play(Transform(layer2_g, layer2_g2))
 
-#         text_090 = TextMobject("So the price of the new product is ${11 \\over 22}$.")
-#         text_090.to_edge(DOWN)
 
-#         self.play(FadeOut(text_080))
-#         self.play(Write(text_090))
-
-#         formula_060 = TexMobject(r"""
-#             10 \times {1 \over 11} + 9 \times -{1 \over 22} = {11 \over 22}         
-#         """)
-#         formula_060.move_to(DOWN)
-
-#         self.play(ReplacementTransform(formula_050, formula_060))
-#         self.play(FadeOut(formula_060))
-#         self.play(FadeOut(text_090))
+        # 
