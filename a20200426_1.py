@@ -1,28 +1,28 @@
 from manimlib.imports import *
 
-# class Grid(VGroup):
-#     CONFIG = {
-#         "height": 6.0,
-#         "width": 6.0,
-#     }
+class Grid(VGroup):
+    CONFIG = {
+        "height": 6.0,
+        "width": 6.0,
+    }
 
-#     def __init__(self, rows, columns, **kwargs):
-#         digest_config(self, kwargs, locals())
-#         super().__init__(**kwargs)
+    def __init__(self, rows, columns, **kwargs):
+        digest_config(self, kwargs, locals())
+        super().__init__(**kwargs)
 
-#         x_step = self.width / self.columns
-#         y_step = self.height / self.rows
+        x_step = self.width / self.columns
+        y_step = self.height / self.rows
 
-#         for x in np.arange(0, self.width + x_step, x_step):
-#             self.add(Line(
-#                 [x - self.width / 2., -self.height / 2., 0],
-#                 [x - self.width / 2., self.height / 2., 0],
-#             ))
-#         for y in np.arange(0, self.height + y_step, y_step):
-#             self.add(Line(
-#                 [-self.width / 2., y - self.height / 2., 0],
-#                 [self.width / 2., y - self.height / 2., 0]
-#             ))
+        for x in np.arange(0, self.width + x_step, x_step):
+            self.add(Line(
+                [x - self.width / 2., -self.height / 2., 0],
+                [x - self.width / 2., self.height / 2., 0],
+            ))
+        for y in np.arange(0, self.height + y_step, y_step):
+            self.add(Line(
+                [-self.width / 2., y - self.height / 2., 0],
+                [self.width / 2., y - self.height / 2., 0]
+            ))
 
 C_list = [0, 37.8, -17.8, -50]
 F_list = [32.0, 100, 0, -58]
@@ -133,55 +133,77 @@ class a004(Scene):
         self.play(Transform(text1, layer1_g))
         
 
-        # layer0 = []
-        # for i in range(top_node):
-        #     layer0.append(Circle(radius=r))
-        #     layer0[i].move_to([0.5*(i-(top_node-1)/2.), 3, 0]).scale(0.2).set_color(WHITE)
-        #     self.play(ShowCreation(layer0[i]), run_time=0.1)
+        layer0 = []
+        for i in range(top_node):
+            layer0.append(Circle(radius=r))
+            layer0[i].move_to([0.5*(i-(top_node-1)/2.), 3, 0]).scale(0.2).set_color(WHITE)
+            self.play(ShowCreation(layer0[i]), run_time=0.1)
 
         
 
-        
 
-        # lines = []
-        # for i in range(top_node):
-        #     for j in range(up_node):
-        #         s = layer0[i].get_center() # grid[i].get_center()
-        #         e = layer1[j].get_center()
-        #         lines.append(Line(s, e).set_stroke(width=0.5))
+        lines = []
+        for i in range(top_node):
+            for j in range(up_node):
+                s = layer0[i].get_center() # grid[i].get_center()
+                e = layer1[j].get_center()
+                lines.append(Line(s, e).set_stroke(width=0.5))
 
-        # lines_g = VGroup(*lines)
-        # self.play(ShowCreation(lines_g))
+        lines_g = VGroup(*lines)
+        self.play(ShowCreation(lines_g))
            
 
-        # layer2 = []
-        # for i in range(down_node):
-        #     layer2.append(Circle(radius=r))
-        #     layer2[i].move_to([0.5*(i-(down_node-1)/2.), -3, 0]).scale(0.2).set_color(WHITE)
-        #     self.play(ShowCreation(layer2[i]), run_time=0.1)
+        layer2 = []
+        for i in range(down_node):
+            layer2.append(Circle(radius=r))
+            layer2[i].move_to([0.5*(i-(down_node-1)/2.), -3, 0]).scale(0.2).set_color(WHITE)
+            self.play(ShowCreation(layer2[i]), run_time=0.1)
 
-        # lines = []
-        # for i in range(up_node):
-        #     for j in range(down_node):
-        #         s = layer1[i].get_center()
-        #         e = layer2[j].get_center()
-        #         lines.append(Line(s, e).set_stroke(width=0.5))
+        lines = []
+        for i in range(up_node):
+            for j in range(down_node):
+                s = layer1[i].get_center()
+                e = layer2[j].get_center()
+                lines.append(Line(s, e).set_stroke(width=0.5))
 
-        # lines_g = VGroup(*lines)
-        # self.play(ShowCreation(lines_g))
+        lines_g = VGroup(*lines)
+        self.play(ShowCreation(lines_g))
 
-        # layer2_g = VGroup(*layer2)
+        layer2_g = VGroup(*layer2)
 
-        # down_node = 1
+        down_node = 1
 
-        # layer2 = []
-        # for i in range(down_node):
-        #     layer2.append(Circle(radius=r))
-        #     layer2[i].move_to([0.5*(i-(down_node-1)/2.), -3, 0]).scale(0.2).set_color(WHITE)
-        # #    self.play(ShowCreation(layer2[i]), run_time=0.1)
+        layer2 = []
+        for i in range(down_node):
+            layer2.append(Circle(radius=r))
+            layer2[i].move_to([0.5*(i-(down_node-1)/2.), -3, 0]).scale(0.2).set_color(WHITE)
+        #    self.play(ShowCreation(layer2[i]), run_time=0.1)
 
-        # layer2_g2 = VGroup(*layer2)
-        # self.play(Transform(layer2_g, layer2_g2))
+        layer2_g2 = VGroup(*layer2)
+        self.play(Transform(layer2_g, layer2_g2))
 
+class a005(Scene):
+    def construct(self):
 
-        # 
+        x = TexMobject("x")
+        f_1_x = TexMobject("f_1 (x)", "=", "w_{1,1}", "x", "+", "b_{1,1}")
+        f_2_x = TexMobject("f_2 (x)", "=", "w_{1,2}", "x", "+", "b_{1,2}")
+        y_hat = TexMobject("\\hat{y}", "=", "w_{2,1}", "f_1", "+", 
+            "w_{2,2}", "f_2", "+", "b_{2,1}" )
+
+        x.move_to(UP*3)
+        f_1_x.move_to(LEFT*3)
+        f_2_x.move_to(RIGHT*3)
+        y_hat.move_to(DOWN*3)
+
+        self.play(Write(x))
+        self.play(Transform(x.copy(), f_1_x[3]), Transform(x.copy(), f_2_x[3]))
+        self.wait(2)
+        self.play(Write(VGroup(f_1_x, f_2_x)))
+        self.wait(2)
+        self.play(Transform(f_1_x[0].copy(), y_hat[3]), Transform(f_2_x[0].copy(), y_hat[6]))
+        self.wait(2)
+        self.play(Write(y_hat))
+        self.wait()
+        
+
