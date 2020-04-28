@@ -7,3 +7,5 @@ file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20
 file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200420_1/480p15/partial_movie_files/a20200420_1/00006.mp4'
 file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200420_1/480p15/partial_movie_files/a20200420_1/00007.mp4'
 file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200420_1/480p15/partial_movie_files/a20200420_1/00008.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200420_1/480p15/partial_movie_files/a20200420_1/00009.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200420_1/480p15/partial_movie_files/a20200420_1/00010.mp4'
