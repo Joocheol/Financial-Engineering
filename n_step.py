@@ -1,6 +1,6 @@
 from manimlib.imports import *
 
-class a20200420_1(Scene):
+class n_step(Scene):
     def construct(self):
 
         text = TextMobject("1 Step:")
@@ -15,7 +15,7 @@ class a20200420_1(Scene):
         formula_1.move_to(UP*2.5).scale(0.7)
         
         self.play(Write(formula_1))
-        self.wait()
+        self.wait(3)
 
         text = TextMobject("2 Steps:")
         text.move_to(UP*2+LEFT*4)
@@ -29,21 +29,32 @@ class a20200420_1(Scene):
         formula_2.move_to(UP*1).scale(0.7)
         
         self.play(Write(formula_2))
-        self.wait()
+        self.wait(3)
 
         
         text = TextMobject("$n$ Steps:")
-        text.move_to(DOWN*1+LEFT*4)
+        text.move_to(DOWN*0+LEFT*4)
         self.play(Write(text))
         
         formula_3 = TexMobject(
             "C", "=", "{1 \\over r^{n} }", 
-            "\\Big[", "p^{n}", "C_{uu...u}", "+", "\\cdots", "+ {n \\choose j}", "C_{u...d} + ", "\\cdots", 
-            "+", "(1-p)^n", "C_{dd...d}", "\\Big]"  
+            "\\sum_{j=0}^{n}", "{n \\choose j}", "p^{j} (1-p)^{n-j}", "C_{uu...dd}"
         )
 
-        formula_3.move_to(DOWN*2.5).scale(0.7)
+        formula_3.move_to(DOWN*1).scale(0.7)
         
         self.play(Write(formula_3))
-        self.wait()
+        self.wait(3)
+
+        formula_4 = TexMobject(
+            "C", "=", "{1 \\over r^{n} }", 
+            "\\sum_{j=0}^{n}", "{n \\choose j}", "p^{j} (1-p)^{n-j}", "\\max ( u^{j} d^{n-j} S - K, 0)"
+        )
+
+        formula_4.move_to(DOWN*2.5).scale(0.7)
+        
+        self.play(Write(formula_4))
+        for i in range(3):
+            self.play(Transform(formula_3[6].copy(), formula_4[6]))
+        self.wait(3)
 
