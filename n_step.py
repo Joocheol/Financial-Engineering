@@ -54,7 +54,7 @@ class n_step(Scene):
         formula_4.move_to(DOWN*2.5).scale(0.7)
         
         self.play(Write(formula_4))
-        for i in range(5):
+        for i in range(3):
             self.play(Transform(formula_3[6].copy(), formula_4[6]))
         self.wait(3)
 

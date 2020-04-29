@@ -19,7 +19,7 @@ class binomial_formula(Scene):
         self.play(Write(f_3))
         self.wait(3)
 
-        F_4 = TexMobject("{n \\choose x} = { {n!} \\over {n! (n-x)!} },", 
+        F_4 = TexMobject("{n \\choose x} = { {n!} \\over {x! (n-x)!} },", 
         	"\\quad n! = n \\times (n-1) \\times\\cdots \\times 1 ")
         F_4.move_to(DOWN*2)
         self.play(Write(F_4))
