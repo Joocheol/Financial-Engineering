@@ -99,9 +99,11 @@ class nodes_to_line(Scene):
         line = Line([-3,-0.5,0], [5,-0.5,0])
 
         self.play(Write(nodes))
+        self.wait()
         self.play(ShowCreation(line))
-        #self.play(Transform(nodes, nodes.move_to([-2, -1, 0])))
+        self.wait()
         self.play(Rotate(nodes, angle=PI/2, axis=IN, about_point=[-3,-4,0]))
+        self.wait()
 
         line_1 = Line([-3,-0.5,0], [1,-0.5,0])
         line_2 = Line([1,-0.5,0], [5,3,0])
@@ -110,9 +112,11 @@ class nodes_to_line(Scene):
         line_2.set_color(RED)
 
         self.play(ShowCreation(line_1))
+        self.wait()
         self.play(ShowCreation(line_2))
 
         self.play(Rotate(nodes, angle=PI/2, axis=OUT, about_point=[-3,-4,0]))
+        self.wait()
 
 class current_formula(Scene):
     def construct(self):
@@ -125,7 +129,7 @@ class current_formula(Scene):
         #formula_4.move_to(DOWN*2.5).scale(0.7)
         
         self.play(Write(formula_4))
-        self.wait()
+        self.wait(5)
         
 
 
