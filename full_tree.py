@@ -81,6 +81,38 @@ class full_tree(Scene):
             for j in range(-2,3):
                 self.play(Transform(text, text.move_to([5, j, 0])))
 
+class nodes_to_line(Scene):
+    def construct(self):
+
+        nodes = TexMobject(
+            "u^{0} d^{n-0} S",
+            "u^{1} d^{n-1} S",
+            "\\vdots",
+            "u^j d^{n-j} S",
+            "\\vdots",
+            "u^{n-1} d^1 S", 
+            "u^{n} d^{n-n} S", 
+             )
+
+        [nodes[i].move_to([-5, i-3, 0]) for i in range(7)]
+
+        line = Line([-3,-0.5,0], [5,-0.5,0])
+
+        self.play(Write(nodes))
+        self.play(ShowCreation(line))
+        #self.play(Transform(nodes, nodes.move_to([-2, -1, 0])))
+        self.play(Rotate(nodes, angle=PI/2, axis=IN, about_point=[-3,-4,0]))
+
+        line_1 = Line([-3,-0.5,0], [1,-0.5,0])
+        line_2 = Line([1,-0.5,0], [5,3,0])
+
+        line_1.set_color(RED)
+        line_2.set_color(RED)
+
+        self.play(ShowCreation(line_1))
+        self.play(ShowCreation(line_2))
+
+        self.play(Rotate(nodes, angle=PI/2, axis=OUT, about_point=[-3,-4,0]))
 
 
 
