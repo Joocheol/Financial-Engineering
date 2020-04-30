@@ -1,0 +1,2 @@
+file 'C:/Users/jooch/Documents/GitHub/Financial-Engineering/media/videos/Reformulating_the_formula/1440p60/partial_movie_files/current_formula/00000.mp4'
+file 'C:/Users/jooch/Documents/GitHub/Financial-Engineering/media/videos/Reformulating_the_formula/1440p60/partial_movie_files/current_formula/00001.mp4'
