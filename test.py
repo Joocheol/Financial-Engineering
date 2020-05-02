@@ -2,6 +2,6 @@ from manimlib.imports import *
 
 class abc(Scene):
 	def construct(self):
-		a = Vector()
+		a = TexMobject("abc", height=0.2, width=1.2)
 
-		self.play(MoveCar(a, RIGHT*3))
+		self.play(Write(a))
