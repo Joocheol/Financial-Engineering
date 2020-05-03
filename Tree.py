@@ -47,23 +47,27 @@ class Tree1(Scene):
 
             if i == 0:
                 self.play(Write(nodes_g), run_time=1)
-                text_1 = TextMobject("Present")
+                text_1 = TextMobject("Present").scale(0.7)
                 self.play(Write(text_1.next_to(nodes[0][0], LEFT)))
 
             if i == self.n_of_steps:
                 self.play(Write(nodes_g), run_time=1)
-                text_2 = TextMobject("Maturity")
+                text_2 = TextMobject("Maturity").scale(0.7)
                 nodes_g = VGroup(*nodes[self.n_of_steps])
                 brace = Brace(nodes_g, RIGHT)
                 self.play(Write(brace))
                 self.play(Write(text_2.next_to(brace, RIGHT)))
                 
-        for i in range(1,self.n_of_steps):
-            nodes_g = VGroup(*nodes[i]) 
-            self.play(Write(nodes_g), run_time=0.2)
+        #for i in range(1,self.n_of_steps):
+        #    nodes_g = VGroup(*nodes[i]) 
+        #    #self.play(ShowCreation(nodes_g), run_time=0.2)
+        #    self.add(nodes_g)
 
-        text_1 = TextMobject("Present")
-        text_2 = TextMobject("Maturity")
+        nodes_g = VGroup(*[nodes[i][j] for i in range(1, self.n_of_steps) for j in range(i+1)])
+        self.play(FadeIn(nodes_g), run_time = 3)
+        text_3 = TextMobject("Future").scale(0.7)
+        self.play(Write(text_3.next_to(brace, RIGHT)))
+
 
 
 class Tree2(Scene):
