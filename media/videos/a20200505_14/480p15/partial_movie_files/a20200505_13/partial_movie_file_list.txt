@@ -1,0 +1,8 @@
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00000.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00001.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00002.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00003.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00004.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00005.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00006.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200505_14/480p15/partial_movie_files/a20200505_13/00007.mp4'

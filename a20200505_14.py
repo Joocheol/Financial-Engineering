@@ -1,6 +1,6 @@
 from manimlib.imports import *
 
-class a20200505_13(Scene):
+class a20200505_14(Scene):
     def construct(self):
 
         f_1 = TexMobject("(x+y)^2", "=", "x^2", "+", "2xy", "+", "y^2")
