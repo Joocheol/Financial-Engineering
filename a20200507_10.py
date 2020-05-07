@@ -1,24 +1,37 @@
 from manimlib.imports import *
 
-class a20200507_10(Scene):
+class a20200507_10(GraphScene):
+    
+    CONFIG = {
+        "y_max" : 10,
+        "x_max" : 14,
+        "axes_color" : BLUE
+    }
+
     def construct(self):
 
-        str = r"""
-            \mathbb{E} (X) = {n\choose{k}}
-        """
-        str = str.split()
-        f_1 = TexMobject(*str)
-        f_1[1][0].set_color(RED)
-        self.play(Write(f_1))
-        self.wait()
+        self.setup_axes(animate=True)
 
-        str = r"""
-            {n\choose{k}}
-        """
-        str = str.split()
-        f_2 = TexMobject(*str)
-        f_2[0][1].set_color(RED)
-        self.play(ApplyMethod(f_1.move_to, UP*1.5))
-        self.play(Write(f_2))
-        self.wait()
+        # graph = self.get_graph(
+        #     lambda x : np.sin(x), 
+        #     color = GREEN
+        # )
 
+        # self.play(
+        #     ShowCreation(graph),
+        # )
+        # self.wait(1)
+
+
+        pt = Dot()
+
+        g = lambda x : 4 * x * (1-x)
+        #x = [0.1, 0.2, ]
+        #g_x = [g(x) for x in  ]
+        x = 0.3
+        for i in range(10):
+            
+            self.play(ApplyMethod(pt.move_to, [x, g(x), 0]))
+            self.play(ApplyMethod(pt.move_to, [g(x), g(x), 0]))
+            x = g(x)
+                
