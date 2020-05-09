@@ -7,7 +7,7 @@ class a20200509_12(GraphScene):
             "y_min" : 0,
             "y_max" : 0.3,
             "x_min" : 0,
-            "x_max" : 30,
+            "x_max" : 31,
             "y_axis_label": "$\\mathbb{P} (X=x)$",
         }
 
@@ -18,22 +18,31 @@ class a20200509_12(GraphScene):
         N = 10
         p = 0.6
 
-        for N in range(5,30):
-            self.plot_things(N, p)
+        v_1 = self.plot_things(4,p)
+        self.add(v_1)
+        
+        for N in range(5,31):
+            v = self.plot_things(N, p)
+            self.play(Transform(v_1, v))
+
+        self.add(v_1)
+        self.wait()
 
     def plot_things(self, N, p):
 
-        things=VGroup()
+        string = "N = {}, p = {}".format(N,p)
+        string = string.split()
+        f_1 = TexMobject(*string)
+        f_1.move_to(UP*3+RIGHT)
+
+        things = VGroup()
 
         for i in range(N+1):
             thing = Dot()
             thing.move_to(self.coords_to_point(i, binom.pmf(i, n=N, p=p)))
             things.add(thing)
         
-        #things_g = VGroup(*things)
-        self.add(things)
-        #self.wait()
-        self.play(FadeOut(things))
+        return VGroup(f_1, things)
 
 
         
