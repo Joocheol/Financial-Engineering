@@ -1,1 +1,1 @@
-file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200426_g/480p15/partial_movie_files/a20200426/00000.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200426_g/480p15/partial_movie_files/a20200426/00000.mp4'
