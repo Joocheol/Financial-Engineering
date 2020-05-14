@@ -3,3 +3,7 @@ file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/video
 file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200512_20/1080p60/partial_movie_files/a20200512_20/00002.mp4'
 file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200512_20/1080p60/partial_movie_files/a20200512_20/00003.mp4'
 file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200512_20/1080p60/partial_movie_files/a20200512_20/00004.mp4'
+file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200512_20/1080p60/partial_movie_files/a20200512_20/00005.mp4'
+file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200512_20/1080p60/partial_movie_files/a20200512_20/00006.mp4'
+file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200512_20/1080p60/partial_movie_files/a20200512_20/00007.mp4'
+file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200512_20/1080p60/partial_movie_files/a20200512_20/00008.mp4'

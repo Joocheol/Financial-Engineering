@@ -58,4 +58,20 @@ class a20200512_20(GraphScene):
             rate_func=linear,
             run_time=5
             )
-        self.wait(3)
+        self.wait()
+        self.play(
+            x_value.set_value,0,
+            rate_func=linear,
+            run_time=5
+            )
+        self.wait()
+
+        string = r"""
+            f(x) = {{1} \over {1 + e^{-x}}}
+        """
+        string = string.split()
+        f_1 = TexMobject(*string)
+        f_1.to_edge(LEFT, buff=1)
+
+        self.play(Write(f_1))
+        self.wait()
