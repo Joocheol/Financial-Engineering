@@ -1,2 +1,2 @@
-file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200515_06/480p15/partial_movie_files/a20200515_06/00000.mp4'
-file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/a20200515_06/480p15/partial_movie_files/a20200515_06/00001.mp4'
+file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200515_06/480p15/partial_movie_files/a20200515_06/00000.mp4'
+file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/a20200515_06/480p15/partial_movie_files/a20200515_06/00001.mp4'

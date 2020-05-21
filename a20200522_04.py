@@ -1,6 +1,6 @@
 from manimlib.imports import *
 
-class a20200522_4(Scene):
+class a20200522_04(Scene):
     def construct(self):
 
         title_1 = TextMobject("The simplest case")
