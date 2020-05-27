@@ -104,6 +104,7 @@ class a20200524_14(GraphScene):
         m_short_5 = self.get_graph(m_short_5, color="YELLOW")
        
 #####
+        wt = 10
         surprise = TextMobject("Surprise") 
         text = TextMobject("Let's practice reading payoffs.").to_edge(UL, buff=1)
         # self.play(Write(text))
@@ -112,41 +113,47 @@ class a20200524_14(GraphScene):
 
         self.play(ShowCreation(c_short_5))
         self.play(Write(call_short.to_edge(LEFT, buff=1)))
-        self.wait()
+        self.wait(wt)
         self.play(FadeOut(call_short))
         self.play(FadeOut(c_short_5))
+        self.wait(wt)
 
         self.play(ShowCreation(f_long_5))
         self.play(Write(forward_long.to_edge(LEFT, buff=1)))
-        self.wait()
+        self.wait(wt)
         self.play(FadeOut(forward_long))
         self.play(FadeOut(f_long_5))
+        self.wait(wt)
 
         self.play(ShowCreation(s_long))
         self.play(Write(asset_long.to_edge(LEFT, buff=1)))
         #self.play(Write(surprise))
-        self.wait(5)
+        self.wait(wt)
         #self.play(FadeOut(surprise))
         self.play(FadeOut(asset_long))
         self.play(FadeOut(s_long))
+        self.wait(wt)
 
         self.play(ShowCreation(p_long_5))
         self.play(Write(put_long.to_edge(LEFT, buff=1)))
-        self.wait()
+        self.wait(wt)
         self.play(FadeOut(put_long))
         self.play(FadeOut(p_long_5))
+        self.wait(wt)
 
         self.play(ShowCreation(p_short_5))
         self.play(Write(put_short.to_edge(LEFT, buff=1)))
-        self.wait()
+        self.wait(wt)
         self.play(FadeOut(put_short))
         self.play(FadeOut(p_short_5))
+        self.wait(wt)
 
         self.play(ShowCreation(m_short_5))
         self.play(Write(money_short.to_edge(LEFT, buff=1)))
-        self.wait()
+        self.wait(wt)
         self.play(FadeOut(money_short))
         self.play(FadeOut(m_short_5))
+        self.wait(wt)
 
         # text = TextMobject("It is a showtime!").to_edge(UL, buff=1)
         # self.play(Write(text))
@@ -155,22 +162,23 @@ class a20200524_14(GraphScene):
 
         group = VGroup(call_long, put_short).arrange_submobjects(DOWN).to_edge(LEFT, buff=1)
         self.play(Write(group))
-        self.wait()
+        self.wait(wt)
         self.play(ShowCreation(c_long_5))
         self.play(ShowCreation(p_short_5))
-        self.wait()
+        self.wait(wt)
         self.play(Transform(group, forward_long))
         self.add(f_long_5)
         self.play(FadeOut(c_long_5), FadeOut(p_short_5))
-        self.wait()
+        self.wait(wt)
         self.play(FadeOut(f_long_5), FadeOut(group))
+        self.wait(wt)
 
         self.play(ShowCreation(f_long_5))
         self.play(Write(forward_long))
         self.play(Transform(f_long_5.copy(), s_long), Transform(f_long_5.copy(), m_short_5))
-        self.wait()
+        self.wait(wt)
         self.play(FadeOut(f_long_5))
-        self.wait()
+        self.wait(wt)
 
 
 
