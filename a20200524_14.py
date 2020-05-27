@@ -106,9 +106,9 @@ class a20200524_14(GraphScene):
 #####
         surprise = TextMobject("Surprise") 
         text = TextMobject("Let's practice reading payoffs.").to_edge(UL, buff=1)
-        self.play(Write(text))
-        self.wait()
-        self.play(FadeOut(text))
+        # self.play(Write(text))
+        # self.wait()
+        # self.play(FadeOut(text))
 
         self.play(ShowCreation(c_short_5))
         self.play(Write(call_short.to_edge(LEFT, buff=1)))
@@ -148,10 +148,10 @@ class a20200524_14(GraphScene):
         self.play(FadeOut(money_short))
         self.play(FadeOut(m_short_5))
 
-        text = TextMobject("It is a showtime!").to_edge(UL, buff=1)
-        self.play(Write(text))
-        self.wait()
-        self.play(FadeOut(text))
+        # text = TextMobject("It is a showtime!").to_edge(UL, buff=1)
+        # self.play(Write(text))
+        # self.wait()
+        # self.play(FadeOut(text))
 
         group = VGroup(call_long, put_short).arrange_submobjects(DOWN).to_edge(LEFT, buff=1)
         self.play(Write(group))
@@ -160,8 +160,10 @@ class a20200524_14(GraphScene):
         self.play(ShowCreation(p_short_5))
         self.wait()
         self.play(Transform(group, forward_long))
+        self.add(f_long_5)
+        self.play(FadeOut(c_long_5), FadeOut(p_short_5))
         self.wait()
-        self.play(FadeOut(c_long_5), FadeOut(p_short_5), FadeOut(group))
+        self.play(FadeOut(f_long_5), FadeOut(group))
 
         self.play(ShowCreation(f_long_5))
         self.play(Write(forward_long))
