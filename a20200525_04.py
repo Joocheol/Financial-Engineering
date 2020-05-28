@@ -146,6 +146,8 @@ class a20200525_04(GraphScene):
         self.play(Transform(s_long, f_long_5), Transform(m_short_5, f_long_5))
         self.wait(5)
 
+        
+
 
 
 
