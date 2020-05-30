@@ -102,39 +102,59 @@ class a20200529_19(GraphScene):
 
     # So let's draw payoff of this situation.
 
-        self.play(Write(asset_long.to_edge(LEFT, buff=1)))
-        self.wait(2)
-        self.play(ShowCreation(s_long))
-        self.wait(2)
-
-        text = TexMobject("- S_0 r")
-        self.play(Write(text.next_to(asset_long, DOWN)))
-        self.wait(2)
-        self.play(ShowCreation(m_short_5))
-        self.wait(2)
-
-        text_2 = TexMobject("S_T - S_0 r")
-        self.play(
-            ReplacementTransform(asset_long, text_2.to_edge(LEFT, buff=1)), 
-            ReplacementTransform(text, text_2.to_edge(LEFT, buff=1)))
-        self.wait(2)
-
-        self.play(FadeOut(text_2))
-        self.play(FadeOut(s_long), FadeOut(m_short_5))
-        self.wait(2)
-
-    # Let's think about a long position of the forward contract.
-
-        self.play(Write(forward_long.to_edge(LEFT, buff=1)))
-        self.wait(2)
-        self.play(ShowCreation(f_long_5))
-        self.wait(2)
-        self.play(ReplacementTransform(f_long_5.copy(), s_long), ReplacementTransform(f_long_5, m_short_5))
-        self.wait(2)
         
-        text_2 = TexMobject("S_T - S_0 r")
-        self.play(Write(text_2.next_to(forward_long, DOWN)))
-        self.wait(2)
+        inst = TextMobject("Available Instruments:").scale(0.7).to_edge(UL, buff=1)
+        inst_1 = TextMobject("1. Stock (underlying asset)").scale(0.7).next_to(inst, DOWN, aligned_edge=LEFT)
+        inst_2 = TextMobject("2. Money (from/to bank)").scale(0.7).next_to(inst_1, DOWN, aligned_edge=LEFT)
+        inst_3 = TextMobject("3. Call(K)").scale(0.7).next_to(inst_2, DOWN, aligned_edge=LEFT)
+        inst_4 = TextMobject("4. Put(K)").scale(0.7).next_to(inst_3, DOWN, aligned_edge=LEFT)
+        self.play(Write(inst))
+        self.play(Write(inst_1))
+        self.play(Write(inst_2))
+        self.play(Write(inst_3))
+        self.play(Write(inst_4))
+        self.wait()
+
+        title = TextMobject("Cost: ").scale(0.7).to_edge(DL, buff=1)
+        cost = TexMobject("0").scale(0.7).next_to(title, RIGHT)
+        self.play(Write(title))
+        self.play(Write(cost))
+        self.wait()
+
+        self.play(Write(inst_1.set_color(YELLOW)))
+    #     self.play(Write(asset_long.to_edge(LEFT, buff=1)))
+    #     self.wait(2)
+    #     self.play(ShowCreation(s_long))
+    #     self.wait(2)
+
+    #     text = TexMobject("- S_0 r")
+    #     self.play(Write(text.next_to(asset_long, DOWN)))
+    #     self.wait(2)
+    #     self.play(ShowCreation(m_short_5))
+    #     self.wait(2)
+
+    #     text_2 = TexMobject("S_T - S_0 r")
+    #     self.play(
+    #         ReplacementTransform(asset_long, text_2.to_edge(LEFT, buff=1)), 
+    #         ReplacementTransform(text, text_2.to_edge(LEFT, buff=1)))
+    #     self.wait(2)
+
+    #     self.play(FadeOut(text_2))
+    #     self.play(FadeOut(s_long), FadeOut(m_short_5))
+    #     self.wait(2)
+
+    # # Let's think about a long position of the forward contract.
+
+    #     self.play(Write(forward_long.to_edge(LEFT, buff=1)))
+    #     self.wait(2)
+    #     self.play(ShowCreation(f_long_5))
+    #     self.wait(2)
+    #     self.play(ReplacementTransform(f_long_5.copy(), s_long), ReplacementTransform(f_long_5, m_short_5))
+    #     self.wait(2)
+        
+    #     text_2 = TexMobject("S_T - S_0 r")
+    #     self.play(Write(text_2.next_to(forward_long, DOWN)))
+    #     self.wait(2)
          
         # text = TextMobject("Wrap up").to_edge(UL, buff=1)
         # self.play(Write(text))
