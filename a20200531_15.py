@@ -24,8 +24,22 @@ class a20200531_15(Scene):
 
 #3
         t_1 = TextMobject("In general").to_edge(UL, buff=1)
-        f_1 = TexMobject(r"e^x = 1 + \frac{x}{1!} + \frac{x}{2!} + \frac{x}{3!} + \frac{x}{4!} + \cdots")
+        f_1 = TexMobject(r"e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots")
         f_2 = TexMobject(r"e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \cdots")
+        
+        self.add(t_1)
+        
+        self.play(Write(f_1))
+        self.play(ReplacementTransform(f_1, f_2))
+        self.wait(2)
+
+        self.play(FadeOut(t_1), FadeOut(f_2))
+
+#One of the best properpies of examponential function is thta 
+        t_1 = TextMobject(r"Did you know $\frac{d}{dx} e^x = e^x$?").to_edge(UL, buff=1)
+        
+        f_1 = TexMobject(r"\frac{d}{dx} e^x = \frac{d}{dx} 1 + \frac{d}{dx} \frac{x}{1!} + \frac{d}{dx} \frac{x^2}{2!} + \frac{d}{dx} \frac{x^3}{3!} + \frac{d}{dx} \frac{x^4}{4!} + \cdots")
+        f_2 = TexMobject(r"\frac{d}{dx} e^x = 0 + 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots")
         
         self.add(t_1)
         
