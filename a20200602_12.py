@@ -102,9 +102,9 @@ class a20200602_12(Scene):
         f_4 = TexMobject(*s)
         self.play(Transform(brace_1, brace_2))
         self.play(LaggedStart(
-            ReplacementTransform(f_2[1:3].copy(), f_4[0:2]), 
+            ReplacementTransform(f_2[1:3].copy(), f_4[1:2]), 
             ReplacementTransform(f_3[0:2], f_4[0:2]),
-            lag_ratio=0.5
+            lag_ratio=0.9
             ))
 
         brace_2 = Brace(f_2[1:4], DOWN, buff=SMALL_BUFF)
@@ -112,9 +112,9 @@ class a20200602_12(Scene):
         f_5 = TexMobject(*s)
         self.play(Transform(brace_1, brace_2))
         self.play(LaggedStart(
-            ReplacementTransform(f_2[1:4].copy(), f_5[0:2]), 
-            ReplacementTransform(f_4[0:2], f_5[0:2]),
-            lag_ratio=0.5
+            ReplacementTransform(f_2[1:4].copy(), f_5[1:2]), 
+            Transform(f_4[0:2], f_5[0:2]),
+            lag_ratio=0.9
             ))
         
         #self.play(FadeOut(t_1), FadeOut(f_2))
