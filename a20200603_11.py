@@ -18,6 +18,9 @@ class a20200603_11(Scene):
         f_1 = TexMobject(*s)
         self.play(Write(f_1))
         self.wait()
+        self.play(f_1.move_to, UP*0.5)
+
+        
 
 
         
