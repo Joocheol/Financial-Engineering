@@ -8,30 +8,27 @@ class a20200624(VectorScene):
 
     def construct(self):
 
-        grid = self.add_plane()
-        #self.play(ShowCreation(grid))
-        #self.wait()
+        plane = self.add_plane(animate=True)
 
-    #    self.lock_in_faded_grid()
-        #self.add_axes()
-        #self.lock_in_faded_grid()
-        #self.add_vector([1,2])
-        #v = Vector([0,1])
-        #self.write_vector_coordinates(v)
-        #self.coords_to_vector([1,2])
-    #    self.vector_to_coords([1,3])
+        b = self.get_basis_vectors()
+       
 
-        #plane = NumberPlane()
-        #self.add(plane)
-        #self.wait()
+        a = self.add_vector([4,2])
 
-        self.add_vector([2,1], color=BLUE)
+        
+        
 
-    def add_plane(self, animate=False, **kwargs):
-        plane = NumberPlane(**kwargs)
-        if animate:
-            self.play(ShowCreation(plane, lag_ratio=0.5))
-        self.add(plane)
-        return plane
+        self.label_vector(a, [10,2], at_tip=True)
 
+        self.add_vector(b[0])
+        self.add_vector(b[1])
+
+        self.label_vector(b[0], [1,1])
+
+        self.vector_to_coords([-3,2])
+
+        
+
+    
+    
 
