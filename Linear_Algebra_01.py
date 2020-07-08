@@ -53,15 +53,17 @@ class Linear_Algebra_03(MyScene):
         
         #self.vector_to_coords(v_1)
 
-        v_2 = self.get_vector([1,2])
+    #     v_2 = self.get_vector([1,2])
 
-    def get_vector(self, numerical_vector, **kwargs):
-        return Arrow(
-            plane.coords_to_point(0, 0),
-            plane.coords_to_point(*numerical_vector[:2]),
-            buff=0,
-            **kwargs
-        )
+    # def get_vector(self, numerical_vector, **kwargs):
+    #     return Arrow(
+    #         plane.coords_to_point(0, 0),
+    #         plane.coords_to_point(*numerical_vector[:2]),
+    #         buff=0,
+    #         **kwargs
+    #     )
+
+        self.tex("hello")
 
 
     
