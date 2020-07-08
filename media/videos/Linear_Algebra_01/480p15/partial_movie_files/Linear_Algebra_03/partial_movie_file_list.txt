@@ -1,0 +1,8 @@
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00000.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00001.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00002.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00003.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00004.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00005.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00006.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/Linear_Algebra_01/480p15/partial_movie_files/Linear_Algebra_03/00007.mp4'

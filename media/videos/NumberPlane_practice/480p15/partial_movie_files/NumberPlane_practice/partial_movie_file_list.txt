@@ -1,0 +1,2 @@
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/NumberPlane_practice/480p15/partial_movie_files/NumberPlane_practice/00000.mp4'
+file '/Users/joocheolkim/Documents/GitHub/Financial-Engineering/media/videos/NumberPlane_practice/480p15/partial_movie_files/NumberPlane_practice/00001.mp4'
