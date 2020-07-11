@@ -1,3 +1,1 @@
 file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/manim_test/480p15/partial_movie_files/manim_test/00000.mp4'
-file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/manim_test/480p15/partial_movie_files/manim_test/00001.mp4'
-file 'C:/Users/jooch/OneDrive/Documents/GitHub/Financial-Engineering/media/videos/manim_test/480p15/partial_movie_files/manim_test/00002.mp4'
