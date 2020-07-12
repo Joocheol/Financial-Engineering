@@ -1,5 +1,54 @@
 from manimlib.imports import *
 
+class LA_01(Scene):
+    def construct(self):
+
+        text_010 = TextMobject("Can you solve the system of equations")
+
+        # self.play(GrowFromCenter(text_010))
+        # self.wait(1)
+
+        # self.play(FadeOut(text_010))
+        # self.wait(1)
+
+        formula_010 = TexMobject(r"""
+            x + y = 1  \\
+            x - y = 1 
+        """)
+
+        self.play(GrowFromCenter(formula_010))
+        self.wait(1)
+
+        text_030 = TextMobject("We know how to solve the system of equations.")
+        text_030.to_edge(DOWN)
+
+        self.play(Write(text_030))
+        self.wait()
+        self.play(FadeOut(text_030))
+
+        text_040 = TextMobject("One way is to use the graph.")
+        text_040.to_edge(DOWN)
+
+        self.play(Write(text_040))
+
+        formula_010.scale(0.7)
+        self.play(formula_010.to_edge, UL )
+
+        plane = NumberPlane()
+        self.add(plane)
+        self.wait()
+        self.play(FadeOut(text_040))
+
+        f1 = FunctionGraph(
+            lambda x: 1 - x,
+        )
+        self.play(ShowCreation(f1))
+
+        f2 = FunctionGraph(
+            lambda x: x - 1,
+        )
+        self.play(ShowCreation(f2))
+
 class LA_test(Scene):
 
     print(color_to_rgba(Color('blue')))
