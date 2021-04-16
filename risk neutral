@@ -1,0 +1,51 @@
+%%manim A
+
+from manim import *
+
+class A(GraphScene):
+    def construct(self):
+        self.setup_axes()
+        self.wait()
+        
+        dot_1 = Dot().move_to(self.coords_to_point(1,1))
+        self.add(dot_1)
+        dashed_line_11 = DashedLine(self.coords_to_point(1,0),self.coords_to_point(1,1))
+        dashed_line_12 = DashedLine(self.coords_to_point(1,1),self.coords_to_point(0,1))
+        self.add(dashed_line_11, dashed_line_12)
+        self.wait()
+        
+        dot_2 = Dot().move_to(self.coords_to_point(9,9))
+        self.add(dot_2)
+        dashed_line_21 = DashedLine(self.coords_to_point(9,0),self.coords_to_point(9,9))
+        dashed_line_22 = DashedLine(self.coords_to_point(9,9),self.coords_to_point(0,9))
+        self.add(dashed_line_21, dashed_line_22)
+        self.wait()
+        
+        dashed_line_31 = DashedLine(self.coords_to_point(0,5),self.coords_to_point(4,5))
+        self.add(dashed_line_31)
+        self.wait()
+        
+        dashed_line_31_1 =  DashedLine(self.coords_to_point(4,5),self.coords_to_point(4,0))
+        self.add(dashed_line_31_1)
+        self.wait()
+        
+        self.remove(dashed_line_31)
+        self.remove(dashed_line_31_1)
+        dashed_line_32 = DashedLine(self.coords_to_point(0,5),self.coords_to_point(6,5))
+        self.add(dashed_line_32)
+        self.wait()
+        
+        dashed_line_32_1 = DashedLine(self.coords_to_point(6,5),self.coords_to_point(6,0))
+        self.add(dashed_line_32_1)
+        self.wait()
+        
+        self.remove(dashed_line_32)
+        self.remove(dashed_line_32_1)
+        help_line = Line(self.coords_to_point(0,0),self.coords_to_point(10,10)).set_color(YELLOW)
+        self.add(help_line)
+        self.wait()
+        
+class B(GraphScene):
+    def construct(self):
+        self.setup_axes()
+        self.wait()
