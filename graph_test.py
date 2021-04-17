@@ -4,6 +4,8 @@
 # Usage: python extract_scene.py -p [filename] [classname]
 # eg:    python extract_scene.py -p examples.py DrawCircle
 #
+#
+#
 
 import math
 import numpy as np
