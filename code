@@ -1,0 +1,19 @@
+%%manim D -v CRITICAL
+
+from manim import *
+
+class D(Scene):
+    def construct(self):
+        listing = Code(
+            "untitled.txt",
+            tab_width=4,
+            background_stroke_width=1,
+            background_stroke_color=RED,
+            insert_line_no=True,
+            style=Code.styles_list[15],
+            background="window",
+            language="cpp",
+        )
+        
+        self.play(Write(listing))
+        self.wait()
