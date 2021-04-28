@@ -1,0 +1,23 @@
+%%manim B -v CRITICAL
+
+from manim import *
+
+class B(GraphScene):
+
+    def construct(self):
+        self.setup_axes()
+        f = self.get_my_graph()
+        self.play(Write(f))
+        self.wait()
+        
+    
+    def get_my_graph(self):
+        self.sum = 0
+        self.a = 3
+        def func(x):
+            ret = self.a + self.sum
+            self.sum = self.sum + np.random.normal(0,.5,1)
+            return ret
+        
+        return self.get_graph(func, x_min=0)
+        
