@@ -4,10 +4,10 @@ class a20200517_14(Scene):
     def construct(self):
 
 
-        t_x = TexMobject(r"""
+        t_x = Tex(r"""
             \texttt{x = [6,7,8,9]}
             """)
-        t_y = TexMobject(r"""
+        t_y = Tex(r"""
             \texttt{y = [10,20,30,40]}
             """)
 
@@ -15,10 +15,10 @@ class a20200517_14(Scene):
         self.play(ShowCreation(t))
         self.wait()
         
-        code_x = TexMobject(r"""
+        code_x = Tex(r"""
             \texttt{x = [6,7,8,9]} 
             """)
-        code_y = TexMobject(r"""
+        code_y = Tex(r"""
             \texttt{y = [10,20,30,40]} 
             """)
         #code_xy_g.scale(0.7).next_to(t_1, DOWN, aligned_edge=LEFT, buff=0)
@@ -31,7 +31,7 @@ class a20200517_14(Scene):
 
         
 
-        layer_1_code = TexMobject(r"""
+        layer_1_code = Tex(r"""
             \texttt{Dense(1, input\textunderscore shape=[1])}
             """)
         layer_1_code.scale(0.7).next_to(code_xy_g, DOWN, aligned_edge=LEFT, buff=0.2)
@@ -44,13 +44,13 @@ class a20200517_14(Scene):
         self.wait()
 ###
 
-        t_3 = TexMobject(r"""
+        t_3 = Tex(r"""
             \texttt{6} 
             """)
         t_3.move_to([2,3,0]).scale(0.7)
         
 
-        t_4 = TexMobject(r"""
+        t_4 = Tex(r"""
             \texttt{10} 
             """)
         t_4.move_to([2,-3,0]).scale(0.7)
@@ -60,7 +60,7 @@ class a20200517_14(Scene):
 
 ###
 
-        layer_1_f = TexMobject(r"""
+        layer_1_f = Tex(r"""
             w\cdot[\quad] + b
             """)
 
@@ -74,7 +74,7 @@ class a20200517_14(Scene):
         self.play(FadeOut(layer_1_f))
         self.wait()
 
-        layer_1_code = TexMobject(r"""
+        layer_1_code = Tex(r"""
             \texttt{Dense(2, input\textunderscore shape=[1])}
             """)
         layer_1_code.scale(0.7).next_to(code_xy_g, DOWN, aligned_edge=LEFT, buff=0.2)
@@ -92,10 +92,10 @@ class a20200517_14(Scene):
 
 ###
 
-        f_2 = TexMobject(r"""
+        f_2 = Tex(r"""
             w_{1}\cdot[\quad] + b_{1}
             """)
-        f_3 = TexMobject(r"""
+        f_3 = Tex(r"""
             w_{2}\cdot[\quad] + b_{2}
             """)
 
@@ -106,7 +106,7 @@ class a20200517_14(Scene):
 
 ###
         
-        layer_2_code = TexMobject(r"""
+        layer_2_code = Tex(r"""
             \texttt{Dense(1)}
             """)
         layer_2_code.scale(0.7).next_to(layer_1_code,DOWN,aligned_edge=LEFT,buff=0)
@@ -126,13 +126,13 @@ class a20200517_14(Scene):
         self.play(ReplacementTransform(layer_2_code.copy(), c))
         self.wait()
 
-        layer_2_f_1 = TexMobject(r"""
+        layer_2_f_1 = Tex(r"""
             w_{11}\cdot[\quad] + b_{11}
         """)
-        layer_2_f_2 = TexMobject(r"""
+        layer_2_f_2 = Tex(r"""
             w_{12}\cdot[\quad] + b_{12}
         """)
-        layer_2_f_3 = TexMobject(r"""
+        layer_2_f_3 = Tex(r"""
             w_{21}\cdot[\quad] + w_{21}\cdot[\quad] + b_{21}
         """)
 
