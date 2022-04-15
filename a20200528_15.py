@@ -22,43 +22,43 @@ class a20200528_15(GraphScene):
 
         string = r"""\max ( S_T - K , 0 )"""
         string = string.split()
-        call_long = TexMobject(*string)
+        call_long = Tex(*string)
 
         string = r"""-\max ( S_T - K , 0 )"""
         string = string.split()
-        call_short = TexMobject(*string)
+        call_short = Tex(*string)
 
         string = r"""\max ( K - S_T , 0 )"""
         string = string.split()
-        put_long = TexMobject(*string)
+        put_long = Tex(*string)
 
         string = r"""-\max ( K - S_T , 0 )"""
         string = string.split()
-        put_short = TexMobject(*string)
+        put_short = Tex(*string)
 
         string = r"""S_T - K"""
         string = string.split()
-        forward_long = TexMobject(*string)
+        forward_long = Tex(*string)
 
         string = r"""K - S_T"""
         string = string.split()
-        forward_short = TexMobject(*string)
+        forward_short = Tex(*string)
 
         string = r"""S_T"""
         string = string.split()
-        asset_long = TexMobject(*string)
+        asset_long = Tex(*string)
 
         string = r"""-S_T"""
         string = string.split()
-        asset_short = TexMobject(*string)
+        asset_short = Tex(*string)
 
         string = r"""K"""
         string = string.split()
-        money_long = TexMobject(*string)
+        money_long = Tex(*string)
 
         string = r"""-K"""
         string = string.split()
-        money_short = TexMobject(*string)
+        money_short = Tex(*string)
 
 #### Graphs
 

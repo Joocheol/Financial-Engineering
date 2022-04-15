@@ -3,7 +3,7 @@ from manimlib.imports import *
 class a20200505_11(Scene):
     def construct(self):
 
-        f_1 = TexMobject(
+        f_1 = Tex(
             "\\mathbb{E} (X) = \\sum",
             "^{n}", 
             "_{x",
@@ -24,7 +24,7 @@ class a20200505_11(Scene):
         self.wait()
         self.play(Uncreate(f_1))
 
-        f_1 = TexMobject(
+        f_1 = Tex(
             "\\mathbb{E} (X) = \\sum",
             "^{n}", 
             "_{i",
@@ -45,7 +45,7 @@ class a20200505_11(Scene):
         self.wait()
         self.play(Uncreate(f_1))
 
-        f_1 = TexMobject(
+        f_1 = Tex(
             "\\mathbb{E} (X) = \\sum",
             "^{n}", 
             "_{j",
@@ -66,7 +66,7 @@ class a20200505_11(Scene):
         self.wait()
         self.play(Uncreate(f_1))
 
-        f_1 = TexMobject(
+        f_1 = Tex(
             "\\mathbb{E} (X) = \\sum",
             "^{n}", 
             "_{k",

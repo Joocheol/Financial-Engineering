@@ -3,7 +3,7 @@ from manimlib.mobject.geometry import Line
 from manimlib.mobject.geometry import Rectangle
 from manimlib.mobject.mobject import Mobject
 from manimlib.mobject.svg.brace import Brace
-from manimlib.mobject.svg.tex_mobject import TexMobject
+from manimlib.mobject.svg.tex_mobject import Tex
 from manimlib.mobject.svg.tex_mobject import TextMobject
 from manimlib.mobject.types.vectorized_mobject import VGroup
 from manimlib.utils.color import color_gradient
@@ -97,7 +97,7 @@ class SampleSpace(Rectangle):
             if isinstance(label, Mobject):
                 label_mob = label
             else:
-                label_mob = TexMobject(label)
+                label_mob = Tex(label)
                 label_mob.scale(self.default_label_scale_val)
             label_mob.next_to(brace, direction, buff)
 
@@ -188,7 +188,7 @@ class BarChart(VGroup):
         if self.label_y_axis:
             labels = VGroup()
             for tick, value in zip(ticks, values):
-                label = TexMobject(str(np.round(value, 2)))
+                label = Tex(str(np.round(value, 2)))
                 label.set_height(self.y_axis_label_height)
                 label.next_to(tick, LEFT, SMALL_BUFF)
                 labels.add(label)
@@ -211,7 +211,7 @@ class BarChart(VGroup):
 
         bar_labels = VGroup()
         for bar, name in zip(bars, self.bar_names):
-            label = TexMobject(str(name))
+            label = Tex(str(name))
             label.scale(self.bar_label_scale_val)
             label.next_to(bar, DOWN, SMALL_BUFF)
             bar_labels.add(label)

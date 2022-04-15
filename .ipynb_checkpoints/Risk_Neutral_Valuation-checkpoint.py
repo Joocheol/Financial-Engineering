@@ -15,7 +15,7 @@ class Risk_Neutral_Valuation(Scene):
         self.play(Write(text))
         self.wait(1)
 
-        formula = TexMobject(
+        formula = Tex(
             "22 \\times ", 
             "\\frac{\\frac{9}{22}}{\\frac{9}{22}+\\frac{11}{22}} ",
             "\\times ",

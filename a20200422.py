@@ -60,7 +60,7 @@ class a20200422(Scene):
         lines_g = VGroup(*lines)
         self.play(ShowCreation(lines_g))
 
-        formula1 = TexMobject(
+        formula1 = Tex(
             "&f_", "{1}",
             "(", "x_", "{1}", ", x_", "{2}", ", \\cdots ", "x_", "{784}",
             ") \\\\", 
@@ -76,7 +76,7 @@ class a20200422(Scene):
         self.play(Write(formula1.move_to(RIGHT+DOWN)))
         self.wait()
 
-        formula2 = TexMobject(
+        formula2 = Tex(
             "\\begin{bmatrix} W \\end{bmatrix}_{128 \\times 784}",
             "\\begin{bmatrix} x \\end{bmatrix}_{784 \\times 1}",
             "+ \\begin{bmatrix} b \\end{bmatrix}_{128 \\times 1}")

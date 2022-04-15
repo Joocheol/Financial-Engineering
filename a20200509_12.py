@@ -32,7 +32,7 @@ class a20200509_12(GraphScene):
 
         string = "N = {}, p = {}".format(N,p)
         string = string.split()
-        f_1 = TexMobject(*string)
+        f_1 = Tex(*string)
         f_1.move_to(UP*3+RIGHT)
 
         things = VGroup()

@@ -11,7 +11,7 @@ class LA_01(Scene):
         # self.play(FadeOut(text_010))
         # self.wait(1)
 
-        formula_010 = TexMobject(r"""
+        formula_010 = Tex(r"""
             x + y = 1  \\
             x - y = 1 
         """)

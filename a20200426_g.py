@@ -34,7 +34,7 @@ class a20200426(Scene):
         C = Matrix([0, 100, -100], element_alignment_corner=DOWN)
         F = Matrix([32, 100, -100], element_alignment_corner=DOWN)
         F.next_to(C, RIGHT)
-        eqn = TexMobject(C, "=", F)
+        eqn = Tex(C, "=", F)
 
         self.play(Write(C), Write(F))
 
@@ -55,25 +55,25 @@ class a20200426(Scene):
 #         self.play(FadeOut(text_010))
 #         self.wait(1)
 
-#         game1 = TexMobject("10")
+#         game1 = Tex("10")
 #         game1.scale(0.7).move_to([-6,2,0])
-#         game1_up = TexMobject("11")
+#         game1_up = Tex("11")
 #         game1_up.scale(0.7).move_to([-4,3,0])
-#         game1_down = TexMobject("11")
+#         game1_down = Tex("11")
 #         game1_down.scale(0.7).move_to([-4,1,0])
 
-#         game2 = TexMobject("9")
+#         game2 = Tex("9")
 #         game2.scale(0.7).move_to([-1,2,0])
-#         game2_up = TexMobject("22")
+#         game2_up = Tex("22")
 #         game2_up.scale(0.7).move_to([1,3,0])
-#         game2_down = TexMobject("0")
+#         game2_down = Tex("0")
 #         game2_down.scale(0.7).move_to([1,1,0])
 
-#         game3 = TexMobject("?")
+#         game3 = Tex("?")
 #         game3.scale(0.7).move_to([4,2,0])
-#         game3_up = TexMobject("22")
+#         game3_up = Tex("22")
 #         game3_up.scale(0.7).move_to([6,3,0])
-#         game3_down = TexMobject("11")
+#         game3_down = Tex("11")
 #         game3_down.scale(0.7).move_to([6,1,0])
 
 #         self.play(
@@ -110,7 +110,7 @@ class a20200426(Scene):
 #         self.play(FadeOut(text_020))
 #         self.play(Write(text_030))
 
-#         formula_010 = TexMobject(r"""
+#         formula_010 = Tex(r"""
 #             \begin{bmatrix} 11 \\ 11 \end{bmatrix}
 #             \times x_1 +
 #             \begin{bmatrix} 22 \\ 0 \end{bmatrix}
@@ -128,7 +128,7 @@ class a20200426(Scene):
 #         self.play(FadeOut(text_030))
 #         self.play(Write(text_040))
 
-#         formula_020 = TexMobject(r"""
+#         formula_020 = Tex(r"""
 #             x_1 = 0, \quad x_2 = {1 \over 22}         
 #         """)
 #         formula_020.move_to(DOWN)
@@ -141,7 +141,7 @@ class a20200426(Scene):
 #         self.play(FadeOut(text_040))
 #         self.play(Write(text_050))
 
-#         formula_030 = TexMobject(r"""
+#         formula_030 = Tex(r"""
 #             10 \times 0 + 9 \times {1 \over 22} = {9 \over 22}         
 #         """)
 #         formula_030.move_to(DOWN)
@@ -179,7 +179,7 @@ class a20200426(Scene):
 #         self.play(FadeOut(text_060))
 #         self.play(Write(text_070))
 
-#         formula_040 = TexMobject(r"""
+#         formula_040 = Tex(r"""
 #             \begin{bmatrix} 11 \\ 11 \end{bmatrix}
 #             \times x_1 +
 #             \begin{bmatrix} 22 \\ 0 \end{bmatrix}
@@ -197,7 +197,7 @@ class a20200426(Scene):
 #         self.play(FadeOut(text_070))
 #         self.play(Write(text_080))
 
-#         formula_050 = TexMobject(r"""
+#         formula_050 = Tex(r"""
 #             x_1 = {1 \over 11}, \quad x_2 = -{1 \over 22}        
 #         """)
 #         formula_050.move_to(DOWN)
@@ -210,7 +210,7 @@ class a20200426(Scene):
 #         self.play(FadeOut(text_080))
 #         self.play(Write(text_090))
 
-#         formula_060 = TexMobject(r"""
+#         formula_060 = Tex(r"""
 #             10 \times {1 \over 11} + 9 \times -{1 \over 22} = {11 \over 22}         
 #         """)
 #         formula_060.move_to(DOWN)

@@ -7,7 +7,7 @@ class n_step(Scene):
         text.move_to(UP*3+LEFT*4)
         self.play(Write(text))
 
-        formula_1 = TexMobject(
+        formula_1 = Tex(
             "C", "=", "{1 \\over r }", 
             "\\Big[", "p", "C_{u}", "+", "(1-p)", "C_{d}", "\\Big]"  
         )
@@ -21,7 +21,7 @@ class n_step(Scene):
         text.move_to(UP*2+LEFT*4)
         self.play(Write(text))
         
-        formula_2 = TexMobject(
+        formula_2 = Tex(
             "C", "=", "{1 \\over r^2 }", 
             "\\Big[", "p^2", "C_{uu}", "+", "2p(1-p)", "C_{ud}", "+", "(1-p)^2", "C_{dd}", "\\Big]"  
         )
@@ -36,7 +36,7 @@ class n_step(Scene):
         text.move_to(DOWN*0+LEFT*4)
         self.play(Write(text))
         
-        formula_3 = TexMobject(
+        formula_3 = Tex(
             "C", "=", "{1 \\over r^{n} }", 
             "\\sum_{j=0}^{n}", "{n \\choose j}", "p^{j} (1-p)^{n-j}", "C_{uu...dd}"
         )
@@ -46,7 +46,7 @@ class n_step(Scene):
         self.play(Write(formula_3))
         self.wait(3)
 
-        formula_4 = TexMobject(
+        formula_4 = Tex(
             "C", "=", "{1 \\over r^{n} }", 
             "\\sum_{j=0}^{n}", "{n \\choose j}", "p^{j} (1-p)^{n-j}", "\\max ( u^{j} d^{n-j} S - K, 0)"
         )

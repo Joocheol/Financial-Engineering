@@ -7,7 +7,7 @@ class a20200507_05(Scene):
         """
         str = str.split()
         
-        f_1 = TexMobject(*str)
+        f_1 = Tex(*str)
         #f_1[3][2:5].set_color(RED)
         # f_1[13][:].set_color(RED)
         # f_1[14:16][:].set_color(YELLOW)
@@ -22,7 +22,7 @@ class a20200507_05(Scene):
         """
         str = str.split()
         
-        f_2 = TexMobject(*str)
+        f_2 = Tex(*str)
         f_2[3][2:5].set_color(YELLOW)
         self.play(ReplacementTransform(f_1, f_2))
         self.wait()
@@ -38,7 +38,7 @@ class a20200507_05(Scene):
         """
         str = str.split()
         
-        f_3 = TexMobject(*str)
+        f_3 = Tex(*str)
         f_3[4:6].set_color(YELLOW)
         self.play(ReplacementTransform(f_2, f_3))
         self.wait()
@@ -55,7 +55,7 @@ class a20200507_05(Scene):
         """
         str = str.split()
         
-        f_4 = TexMobject(*str)
+        f_4 = Tex(*str)
         f_4[3].set_color(YELLOW)
         f_4[6].set_color(YELLOW)
         self.play(ReplacementTransform(f_3, f_4))
@@ -73,7 +73,7 @@ class a20200507_05(Scene):
         """
         str = str.split()
         
-        f_5 = TexMobject(*str)
+        f_5 = Tex(*str)
         f_5[7][5:].set_color(YELLOW)
         self.play(ReplacementTransform(f_4, f_5))
         self.wait()
@@ -84,7 +84,7 @@ class a20200507_05(Scene):
         str = r""" k = 1, 2, \cdots , n"""
         str = str.split()
         
-        f_6 = TexMobject(*str)
+        f_6 = Tex(*str)
         f_6.move_to(DOWN*1.5)
         self.play(Write(f_6))
         self.wait()
@@ -92,7 +92,7 @@ class a20200507_05(Scene):
         str = r""" k-1 = 0, 1, \cdots , n-1"""
         str = str.split()
         
-        f_7 = TexMobject(*str)
+        f_7 = Tex(*str)
         f_7.move_to(DOWN*2.5)
         self.play(Write(f_7))
         self.wait()
@@ -100,7 +100,7 @@ class a20200507_05(Scene):
         str = r""" j = 0, 1, \cdots , m"""
         str = str.split()
         
-        f_8 = TexMobject(*str)
+        f_8 = Tex(*str)
         f_8.move_to(DOWN*2.5)
         self.play(ReplacementTransform(f_7, f_8))
         self.wait()
@@ -123,7 +123,7 @@ class a20200507_05(Scene):
 
         
         # str = str.split()
-        # f_1 = TexMobject(*str)
+        # f_1 = Tex(*str)
         # f_1[4][:].set_color(RED)
         # f_1[6][0].set_color(RED)
         # f_1[6][1].set_color(YELLOW)

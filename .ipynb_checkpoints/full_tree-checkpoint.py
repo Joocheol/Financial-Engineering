@@ -3,21 +3,21 @@ from manimlib.imports import *
 class full_tree(Scene):
     def construct(self):
 
-        node_0_0 = TexMobject("S")
-        node_1_0 = TexMobject("d S")
-        node_1_1 = TexMobject("u S")
-        node_2_0 = TexMobject("d^2 S")
-        node_2_1 = TexMobject("ud S")
-        node_2_2 = TexMobject("u^2 S")
-        # node_3_0 = TexMobject("\\ddots")
-        # node_3_1 = TexMobject("")
-        # node_3_2 = TexMobject("")
-        # node_3_3 = TexMobject("\\iddots")
-        node_4_0 = TexMobject("d^n S")
-        node_4_1 = TexMobject("\\vdots")
-        node_4_2 = TexMobject("u^j d^{n-j} S")
-        node_4_3 = TexMobject("\\vdots")
-        node_4_4 = TexMobject("u^n S")
+        node_0_0 = Tex("S")
+        node_1_0 = Tex("d S")
+        node_1_1 = Tex("u S")
+        node_2_0 = Tex("d^2 S")
+        node_2_1 = Tex("ud S")
+        node_2_2 = Tex("u^2 S")
+        # node_3_0 = Tex("\\ddots")
+        # node_3_1 = Tex("")
+        # node_3_2 = Tex("")
+        # node_3_3 = Tex("\\iddots")
+        node_4_0 = Tex("d^n S")
+        node_4_1 = Tex("\\vdots")
+        node_4_2 = Tex("u^j d^{n-j} S")
+        node_4_3 = Tex("\\vdots")
+        node_4_4 = Tex("u^n S")
 
         node_0_0.move_to([-5.5, 0, 0]).scale(0.7)
         node_1_0.move_to([-3.5, -0.5, 0]).scale(0.7)
@@ -55,11 +55,11 @@ class full_tree(Scene):
         self.play(Write(nodes))
         
 
-        call_0 = TexMobject("\\max (d^n S - K, 0)")
-        call_1 = TexMobject("\\vdots")
-        call_2 = TexMobject("\\max (u^j d^{n-j} S - K, 0 )")
-        call_3 = TexMobject("\\vdots")
-        call_4 = TexMobject("\\max (u^n S - K, 0)")
+        call_0 = Tex("\\max (d^n S - K, 0)")
+        call_1 = Tex("\\vdots")
+        call_2 = Tex("\\max (u^j d^{n-j} S - K, 0 )")
+        call_3 = Tex("\\vdots")
+        call_4 = Tex("\\max (u^n S - K, 0)")
 
         call_0.move_to([4, -2, 0]).set_color(YELLOW).scale(0.7)
         call_1.move_to([4, -1, 0]).scale(0.7)
@@ -74,7 +74,7 @@ class full_tree(Scene):
         self.play(Write(call_3))
         self.play(Write(call_4))
 
-        text = TexMobject("j")
+        text = Tex("j")
 
         for i in range(3):
             self.add(text)
@@ -84,7 +84,7 @@ class full_tree(Scene):
 class nodes_to_line(Scene):
     def construct(self):
 
-        nodes = TexMobject(
+        nodes = Tex(
             "u^{0} d^{n-0} S",
             "u^{1} d^{n-1} S",
             "\\vdots",

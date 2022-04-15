@@ -4,17 +4,17 @@ class text(Scene):
     def construct(self):
 
 ############
-        game1 = TexMobject("10")
-        game1_up = TexMobject("11")
-        game1_down = TexMobject("11")
+        game1 = Tex("10")
+        game1_up = Tex("11")
+        game1_down = Tex("11")
 
-        game2 = TexMobject("9")
-        game2_up = TexMobject("22")
-        game2_down = TexMobject("0")
+        game2 = Tex("9")
+        game2_up = Tex("22")
+        game2_down = Tex("0")
 
-        game3 = TexMobject("?")
-        game3_up = TexMobject("22")
-        game3_down = TexMobject("11")
+        game3 = Tex("?")
+        game3_up = Tex("22")
+        game3_down = Tex("11")
 
         self.play(Write(game1.scale(0.7).move_to([-6,2,0])))
         self.play(Write(game1_up.scale(0.7).move_to([-4,3,0])))
@@ -37,7 +37,7 @@ class text(Scene):
         self.wait(1)
 
 ##########
-        formula = TexMobject(r"""
+        formula = Tex(r"""
         \begin{bmatrix} 11 \\ 11 \end{bmatrix}
         \times x_1
         \begin{bmatrix} 11 \\ 11 \end{bmatrix}

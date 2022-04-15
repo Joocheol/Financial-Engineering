@@ -12,9 +12,9 @@ class Replication(Scene):
         self.wait(1)
 
 ############
-        game1 = TexMobject("10")
-        game1_up = TexMobject("11")
-        game1_down = TexMobject("11")
+        game1 = Tex("10")
+        game1_up = Tex("11")
+        game1_down = Tex("11")
 
         game1.move_to(LEFT+DOWN)
         game1_up.move_to(RIGHT)
@@ -44,9 +44,9 @@ class Replication(Scene):
         self.play(FadeOut(text_020))
 
 
-        game2 = TexMobject("9")
-        game2_up = TexMobject("22")
-        game2_down = TexMobject("0")
+        game2 = Tex("9")
+        game2_up = Tex("22")
+        game2_down = Tex("0")
 
         game2.move_to(LEFT+DOWN)
         game2_up.move_to(RIGHT)
@@ -70,9 +70,9 @@ class Replication(Scene):
         
         self.play(FadeOut(text_030))
 
-        game3 = TexMobject("?")
-        game3_up = TexMobject("22")
-        game3_down = TexMobject("11")
+        game3 = Tex("?")
+        game3_up = Tex("22")
+        game3_down = Tex("11")
 
         game3.move_to(LEFT+DOWN)
         game3_up.move_to(RIGHT)
@@ -161,7 +161,7 @@ class Replication(Scene):
         self.wait(2)
         self.play(FadeOut(text_by_taking))
 
-        formula_010 = TexMobject(r"""
+        formula_010 = Tex(r"""
             \begin{bmatrix} 11 \\ 11 \end{bmatrix}
             \times (+1)
             =
@@ -176,7 +176,7 @@ class Replication(Scene):
         )
         text_and_one.to_edge(DOWN)
 
-        formula_020 = TexMobject(r"""
+        formula_020 = Tex(r"""
             \begin{bmatrix} 11 \\ 11 \end{bmatrix}
             \times (+1) +
             \begin{bmatrix} 22 \\ 0 \end{bmatrix}
@@ -235,7 +235,7 @@ class Replication(Scene):
         self.play(Write(text_And_then))
         self.wait(1)
 
-        formula_030 = TexMobject(r"""
+        formula_030 = Tex(r"""
         \begin{bmatrix} 10\end{bmatrix}
         \times (+1) +
         \begin{bmatrix} 9\end{bmatrix}
@@ -255,7 +255,7 @@ class Replication(Scene):
         #self.add(formula.shift(DOWN))
         #self.wait(1)
 
-        formula_020 = TexMobject(r"""
+        formula_020 = Tex(r"""
         \begin{bmatrix}  ?? \\ ?? \end{bmatrix}
         \times x_1 +
         \begin{bmatrix} 22 \\ 0 \end{bmatrix}

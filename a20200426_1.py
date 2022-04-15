@@ -70,7 +70,7 @@ class a002(GraphScene):
         #vert_line = self.get_vertical_line_to_graph(TAU,func_graph,color=YELLOW)
         #graph_lab = self.get_graph_label(func_graph, label = "\\cos(x)")
         #graph_lab2=self.get_graph_label(func_graph2,label = "\\sin(x)", x_val=-10, direction=UP/2)
-        #two_pi = TexMobject("x = 2 \\pi")
+        #two_pi = Tex("x = 2 \\pi")
         #label_coord = self.input_to_graph_point(TAU,func_graph)
         #two_pi.next_to(label_coord,RIGHT+UP)
      
@@ -96,7 +96,7 @@ class a002(GraphScene):
 class a003(Scene):
     def construct(self):
 
-        eqn = TexMobject("""
+        eqn = Tex("""
             \\hat{\\beta}_{1} = { {\\sum ( x_i - \\bar{x} ) ( y_i - \\bar{y} ) } 
             \\over { \\sum ( x_i - \\bar{x} )^2  } }
         """)
@@ -185,10 +185,10 @@ class a004(Scene):
 class a005(Scene):
     def construct(self):
 
-        x = TexMobject("x")
-        f_1_x = TexMobject("f_1 (x)", "=", "w_{1,1}", "x", "+", "b_{1,1}")
-        f_2_x = TexMobject("f_2 (x)", "=", "w_{1,2}", "x", "+", "b_{1,2}")
-        y_hat = TexMobject("\\hat{y}", "=", "w_{2,1}", "f_1", "+", 
+        x = Tex("x")
+        f_1_x = Tex("f_1 (x)", "=", "w_{1,1}", "x", "+", "b_{1,1}")
+        f_2_x = Tex("f_2 (x)", "=", "w_{1,2}", "x", "+", "b_{1,2}")
+        y_hat = Tex("\\hat{y}", "=", "w_{2,1}", "f_1", "+", 
             "w_{2,2}", "f_2", "+", "b_{2,1}" )
 
         x.move_to(UP*3)

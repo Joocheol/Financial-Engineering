@@ -3,7 +3,7 @@ from manimlib.imports import *
 class a20200420(Scene):
     def construct(self):
 
-        formula_1 = TexMobject(
+        formula_1 = Tex(
             "C_u", "=", "{1 \\over r}", "\\Big[", "p", "C_{uu}", "+", "(1-p)", "C_{ud}", "\\Big]"
         )
         
@@ -12,7 +12,7 @@ class a20200420(Scene):
         self.play(Write(formula_1))
         self.wait()
         
-        formula_2 = TexMobject(
+        formula_2 = Tex(
             "C_d", "=", "{1 \\over r}", "\\Big[", "p", "C_{ud}", "+", "(1-p)", "C_{dd}", "\\Big]"  
         )
 
@@ -21,7 +21,7 @@ class a20200420(Scene):
         self.play(Write(formula_2))
         self.wait()
         
-        formula_3 = TexMobject(
+        formula_3 = Tex(
             "C", "=", "{1 \\over r}", "\\Big[", "p", "C_{u}", "+", "(1-p)", "C_{d}", "\\Big]"  
         )
 
@@ -35,7 +35,7 @@ class a20200420(Scene):
         self.play(Transform(formula_2.copy(), formula_3[8]))
         self.wait()
 
-        formula_4 = TexMobject(
+        formula_4 = Tex(
             "", "=", "{1 \\over r^2 }", "\\Big[", "p^2", "C_{uu}", "+", "2p(1-p)", "C_{ud}", "+", 
             "(1-p)^2", "C_{dd}", "\\Big]"  
         )

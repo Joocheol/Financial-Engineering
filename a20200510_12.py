@@ -22,7 +22,7 @@ class a20200510_12(GraphScene):
 
 
 
-        formula = TexMobject("")
+        formula = Tex("")
         formula.to_edge(RIGHT, buff = 1)
         self.add(formula)
 
@@ -30,7 +30,7 @@ class a20200510_12(GraphScene):
             for b in range(-5,3):
 
                 formula_1 = "\\max ( {} x + {}, 0 ) ".format(w,b)
-                formula_1 = TexMobject(formula_1)
+                formula_1 = Tex(formula_1)
                 formula_1.to_edge(RIGHT, buff = 1)
                 
                 f = lambda x : max(w*x + b, 0)

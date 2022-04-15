@@ -3,9 +3,9 @@ from manimlib.imports import *
 class a20200419(Scene):
     def construct(self):
 
-        S = TexMobject("S")
-        S_u = TexMobject("u S")
-        S_d = TexMobject("d S")
+        S = Tex("S")
+        S_u = Tex("u S")
+        S_d = Tex("d S")
 
         S.move_to(LEFT+DOWN)
         S_u.move_to(RIGHT)
@@ -21,18 +21,18 @@ class a20200419(Scene):
         self.play(Write(S_d))
         self.play(FadeOut(arrow_u), FadeOut(arrow_d))
 
-        SS = TexMobject("S")
-        SS_u = TexMobject("u S")
-        SS_d = TexMobject("d S")
+        SS = Tex("S")
+        SS_u = Tex("u S")
+        SS_d = Tex("d S")
         SS.scale(0.7).move_to(LEFT*6+UP*2.5)
         SS_u.scale(0.7).move_to(LEFT*5+UP*3.5)
         SS_d.scale(0.7).move_to(LEFT*5+UP*1.5)
 
         self.play(Transform(S, SS), Transform(S_u, SS_u), Transform(S_d, SS_d))
         
-        r = TexMobject("1")
-        r_u = TexMobject("r")
-        r_d = TexMobject("r")
+        r = Tex("1")
+        r_u = Tex("r")
+        r_d = Tex("r")
 
         r.move_to(LEFT+DOWN)
         r_u.move_to(RIGHT)
@@ -48,18 +48,18 @@ class a20200419(Scene):
         self.play(Write(r_d))
         self.play(FadeOut(arrow_u), FadeOut(arrow_d))
 
-        rr = TexMobject("1")
-        rr_u = TexMobject("r")
-        rr_d = TexMobject("r")
+        rr = Tex("1")
+        rr_u = Tex("r")
+        rr_d = Tex("r")
         rr.scale(0.7).move_to(LEFT*1+UP*2.5)
         rr_u.scale(0.7).move_to(RIGHT*0+UP*3.5)
         rr_d.scale(0.7).move_to(RIGHT*0+UP*1.5)
 
         self.play(Transform(r, rr), Transform(r_u, rr_u), Transform(r_d, rr_d))
 
-        C = TexMobject("C")
-        C_u = TexMobject("C_u = \\max (uS - K, 0)")
-        C_d = TexMobject("C_d = \\max (dS - K, 0)")
+        C = Tex("C")
+        C_u = Tex("C_u = \\max (uS - K, 0)")
+        C_d = Tex("C_d = \\max (dS - K, 0)")
 
         C.move_to(LEFT*2+DOWN)
         C_u.move_to(RIGHT*2)
@@ -75,16 +75,16 @@ class a20200419(Scene):
         self.play(Write(C_d))
         self.play(FadeOut(arrow_u), FadeOut(arrow_d))
 
-        CC = TexMobject("?")
-        CC_u = TexMobject("C_u")
-        CC_d = TexMobject("C_d")
+        CC = Tex("?")
+        CC_u = Tex("C_u")
+        CC_d = Tex("C_d")
         CC.scale(0.7).move_to(RIGHT*4+UP*2.5)
         CC_u.scale(0.7).move_to(RIGHT*5+UP*3.5)
         CC_d.scale(0.7).move_to(RIGHT*5+UP*1.5)
 
         self.play(Transform(C, CC), Transform(C_u, CC_u), Transform(C_d, CC_d))
 
-        condition = TexMobject("d < r < u")
+        condition = Tex("d < r < u")
         self.play(Write(condition))
         self.wait(2)
         

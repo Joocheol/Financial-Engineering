@@ -20,7 +20,7 @@ from manimlib.mobject.matrix import Matrix
 from manimlib.mobject.matrix import VECTOR_LABEL_SCALE_FACTOR
 from manimlib.mobject.matrix import vector_coordinate_label
 from manimlib.mobject.mobject import Mobject
-from manimlib.mobject.svg.tex_mobject import TexMobject
+from manimlib.mobject.svg.tex_mobject import Tex
 from manimlib.mobject.svg.tex_mobject import TextMobject
 from manimlib.mobject.types.vectorized_mobject import VGroup
 from manimlib.mobject.types.vectorized_mobject import VMobject
@@ -123,10 +123,10 @@ class VectorScene(Scene):
                          rotate=False,
                          color=None,
                          label_scale_factor=VECTOR_LABEL_SCALE_FACTOR):
-        if not isinstance(label, TexMobject):
+        if not isinstance(label, Tex):
             if len(label) == 1:
                 label = "\\vec{\\textbf{%s}}" % label
-            label = TexMobject(label)
+            label = Tex(label)
             if color is None:
                 color = vector.get_color()
             label.set_color(color)

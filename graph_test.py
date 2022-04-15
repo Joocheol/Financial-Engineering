@@ -18,7 +18,7 @@ from manimlib.imports import *
 # from topics.geometry import *
 # from topics import functions
 
-# from mobject.tex_mobject import TexMobject
+# from mobject.tex_mobject import Tex
 
 # from topics.characters import Randolph
 # from animation.animation import Animation
@@ -316,17 +316,17 @@ class Hydrogen(Scene):
 
     def construct(self):
         hydrogen_atom = Mobject()
-        title = TexMobject("Hydrogen Atom")
+        title = Tex("Hydrogen Atom")
         point_A = (-2,2,0)
         point_B = (-2,-2,0)
         arrow = Arrow(ORIGIN+LEFT*0.9,ORIGIN+RIGHT*0.9)
-        add_sign  = TexMobject("+", stroke_width=0.7)
+        add_sign  = Tex("+", stroke_width=0.7)
 
         orbit = Circle(radius=1.3).scale(0.85)
         proton = Dot(radius=0.4, color="GREY").scale(0.85)
         elec = Dot(radius=0.2, color="RED").scale(0.85)
-        p_charge = TexMobject("+", stroke_width=0.5)
-        e_charge = TexMobject("-",stroke_width=0.5)
+        p_charge = Tex("+", stroke_width=0.5)
+        e_charge = Tex("-",stroke_width=0.5)
 
 
         title.move_to(title.get_center()+UP*2)
@@ -344,8 +344,8 @@ class Hydrogen(Scene):
         hydrogen_atom.add(orbit,elec, proton, e_charge, p_charge)
         atom_copy = hydrogen_atom.copy()
 
-        h1_text = TexMobject("H").move_to(point_A+LEFT*2)
-        h2_text = TexMobject("H").move_to(point_B+LEFT*2)
+        h1_text = Tex("H").move_to(point_A+LEFT*2)
+        h2_text = Tex("H").move_to(point_B+LEFT*2)
 
 
         names = VGroup(h1_text, h2_text)
@@ -367,7 +367,7 @@ class Hydrogen(Scene):
         h2_molecule = VGroup(h1_atom,h2_atom)
         two_atoms = VGroup(atom_copy,hydrogen_atom) #org.copy()
 
-        molecule_name = TexMobject("H_{2}").move_to(h2_molecule.get_center()+DOWN*2.5)
+        molecule_name = Tex("H_{2}").move_to(h2_molecule.get_center()+DOWN*2.5)
         self.play(Transform(two_atoms, h2_molecule), FadeOut(arrow.add(add_sign)))
         self.add(h2_molecule)
         self.remove(title,two_atoms)
@@ -451,9 +451,9 @@ class RollAlongVector(Animation):
 # 		self.play(ShowCreation(handle))
 
 # 		floor = Line(cycle.get_bottom()+LEFT*16, cycle.get_bottom()+RIGHT*16,color=BLACK)
-# 		pi_floor = TexMobject(PI).scale(0.9).move_to((cycle.get_bottom()*1.063)+RIGHT*5.2)
+# 		pi_floor = Tex(PI).scale(0.9).move_to((cycle.get_bottom()*1.063)+RIGHT*5.2)
 
-# 		hpday = TexMobject(HAPPY, color=ORANGE).scale(0.9)
+# 		hpday = Tex(HAPPY, color=ORANGE).scale(0.9)
 # 		rect = SurroundingRectangle(hpday)
 # 		holder = Line(rect.get_bottom(), rect.get_bottom()*5)
 # 		board = VGroup(hpday,rect, holder)

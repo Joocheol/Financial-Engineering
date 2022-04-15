@@ -22,7 +22,7 @@ class TexSymbol(VMobjectFromSVGPathstring):
     pass
 
 
-class SingleStringTexMobject(SVGMobject):
+class SingleStringTex(SVGMobject):
     CONFIG = {
         "template_tex_file_body": TEMPLATE_TEX_FILE_BODY,
         "stroke_width": 0,
@@ -106,7 +106,7 @@ class SingleStringTexMobject(SVGMobject):
 
     def remove_stray_braces(self, tex):
         """
-        Makes TexMobject resiliant to unmatched { at start
+        Makes Tex resiliant to unmatched { at start
         """
         num_lefts, num_rights = [
             tex.count(char)
@@ -133,7 +133,7 @@ class SingleStringTexMobject(SVGMobject):
         return self
 
 
-class TexMobject(SingleStringTexMobject):
+class Tex(SingleStringTex):
     CONFIG = {
         "arg_separator": " ",
         "substrings_to_isolate": [],
@@ -144,7 +144,7 @@ class TexMobject(SingleStringTexMobject):
         digest_config(self, kwargs)
         tex_strings = self.break_up_tex_strings(tex_strings)
         self.tex_strings = tex_strings
-        SingleStringTexMobject.__init__(
+        SingleStringTex.__init__(
             self, self.arg_separator.join(tex_strings), **kwargs
         )
         self.break_up_by_substrings()
@@ -178,13 +178,13 @@ class TexMobject(SingleStringTexMobject):
         config = dict(self.CONFIG)
         config["alignment"] = ""
         for tex_string in self.tex_strings:
-            sub_tex_mob = SingleStringTexMobject(tex_string, **config)
+            sub_tex_mob = SingleStringTex(tex_string, **config)
             num_submobs = len(sub_tex_mob.submobjects)
             new_index = curr_index + num_submobs
             if num_submobs == 0:
                 # For cases like empty tex_strings, we want the corresponing
-                # part of the whole TexMobject to be a VectorizedPoint
-                # positioned in the right part of the TexMobject
+                # part of the whole Tex to be a VectorizedPoint
+                # positioned in the right part of the Tex
                 sub_tex_mob.submobjects = [VectorizedPoint()]
                 last_submob_index = min(curr_index, len(self.submobjects) - 1)
                 sub_tex_mob.move_to(self.submobjects[last_submob_index], RIGHT)
@@ -232,7 +232,7 @@ class TexMobject(SingleStringTexMobject):
     def index_of_part(self, part):
         split_self = self.split()
         if part not in split_self:
-            raise Exception("Trying to get index of part not in TexMobject")
+            raise Exception("Trying to get index of part not in Tex")
         return split_self.index(part)
 
     def index_of_part_by_tex(self, tex, **kwargs):
@@ -245,7 +245,7 @@ class TexMobject(SingleStringTexMobject):
         )
 
 
-class TextMobject(TexMobject):
+class TextMobject(Tex):
     CONFIG = {
         "template_tex_file_body": TEMPLATE_TEXT_FILE_BODY,
         "alignment": "\\centering",
@@ -266,7 +266,7 @@ class BulletedList(TextMobject):
         line_separated_items = [s + "\\\\" for s in items]
         TextMobject.__init__(self, *line_separated_items, **kwargs)
         for part in self:
-            dot = TexMobject("\\cdot").scale(self.dot_scale_factor)
+            dot = Tex("\\cdot").scale(self.dot_scale_factor)
             dot.next_to(part[0], LEFT, SMALL_BUFF)
             part.add_to_back(dot)
         self.arrange(
@@ -290,7 +290,7 @@ class BulletedList(TextMobject):
                 other_part.set_fill(opacity=opacity)
 
 
-class TexMobjectFromPresetString(TexMobject):
+class TexFromPresetString(Tex):
     CONFIG = {
         # To be filled by subclasses
         "tex": None,
@@ -299,7 +299,7 @@ class TexMobjectFromPresetString(TexMobject):
 
     def __init__(self, **kwargs):
         digest_config(self, kwargs)
-        TexMobject.__init__(self, self.tex, **kwargs)
+        Tex.__init__(self, self.tex, **kwargs)
         self.set_color(self.color)
 
 

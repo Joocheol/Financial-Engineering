@@ -11,25 +11,25 @@ class Arbitrage(Scene):
         self.play(FadeOut(text_010))
         self.wait(1)
 
-        game1 = TexMobject("10")
+        game1 = Tex("10")
         game1.scale(1).move_to(LEFT*4+UP*2)
-        game1_up = TexMobject("11")
+        game1_up = Tex("11")
         game1_up.scale(1).move_to(LEFT*3+UP*3)
-        game1_down = TexMobject("11")
+        game1_down = Tex("11")
         game1_down.scale(1).move_to(LEFT*3+UP*1)
 
-        game2 = TexMobject("9")
+        game2 = Tex("9")
         game2.scale(1).move_to(LEFT+UP*2)
-        game2_up = TexMobject("22")
+        game2_up = Tex("22")
         game2_up.scale(1).move_to(RIGHT*0+UP*3)
-        game2_down = TexMobject("0")
+        game2_down = Tex("0")
         game2_down.scale(1).move_to(RIGHT*0+UP*1)
 
-        game3 = TexMobject("14.5")
+        game3 = Tex("14.5")
         game3.scale(1).move_to(RIGHT*2+UP*2)
-        game3_up = TexMobject("22")
+        game3_up = Tex("22")
         game3_up.scale(1).move_to(RIGHT*3+UP*3)
-        game3_down = TexMobject("11")
+        game3_down = Tex("11")
         game3_down.scale(1).move_to(RIGHT*3+UP*1)
 
         self.play(
@@ -48,7 +48,7 @@ class Arbitrage(Scene):
         text_030 = TextMobject("Suppose that I want to have  $[1, 0.5, -1]$ portfolio.")
         text_030.to_edge(DOWN)
 
-        formula = TexMobject(r"""
+        formula = Tex(r"""
             [1, 0.5, -1]
         """)
         formula.move_to(DOWN)
@@ -61,7 +61,7 @@ class Arbitrage(Scene):
         text_040 = TextMobject("The cost of building $[1, 0.5, -1]$ portfolio is 0.")
         text_040.to_edge(DOWN)
 
-        formula_010 = TexMobject(r"""
+        formula_010 = Tex(r"""
             10 \times 1 + 9 \times 0.5 + 14.5 \times (-1) = 0
         """)
         formula_010.move_to(DOWN)
@@ -80,7 +80,7 @@ class Arbitrage(Scene):
         text_060 = TextMobject("Now calculate the future payoff of this portfolio.")
         text_060.to_edge(DOWN)
 
-        formula_010 = TexMobject(r"""
+        formula_010 = Tex(r"""
             \begin{bmatrix} 11 \\ 11 \end{bmatrix} 
             \times 1 + 
             \begin{bmatrix} 22 \\ 0 \end{bmatrix} 
@@ -129,7 +129,7 @@ class Arbitrage(Scene):
         text = TextMobject("Let\'s take the previous [1, 0.5, -1] postions.")
         text.to_edge(DOWN)
 
-        formula_010 = TexMobject(r"""
+        formula_010 = Tex(r"""
             10 \times 1 + 9 \times 0.5 + 15 \times (-1) = -0.5
         """)
         formula_010.move_to(DOWN)
@@ -154,7 +154,7 @@ class Arbitrage(Scene):
         text_060 = TextMobject("Now calculate the future payoff of this portfolio.")
         text_060.to_edge(DOWN)
 
-        formula_010 = TexMobject(r"""
+        formula_010 = Tex(r"""
             \begin{bmatrix} 11 \\ 11 \end{bmatrix} 
             \times 1 + 
             \begin{bmatrix} 22 \\ 0 \end{bmatrix} 

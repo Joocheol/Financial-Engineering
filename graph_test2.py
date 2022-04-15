@@ -31,11 +31,11 @@ class ExampleApproximation(GraphScene):
 		]
 		
 		term_num = [
-		TexMobject("n = " + str(n),aligned_edge=TOP)
+		Tex("n = " + str(n),aligned_edge=TOP)
 		for n in range(0,8)]
 		[t.to_edge(BOTTOM,buff=SMALL_BUFF) for t in term_num]
 		
-		term = TexMobject("")
+		term = Tex("")
 		term.to_edge(BOTTOM,buff=SMALL_BUFF)
 		
 		approx_graph = VectorizedPoint(

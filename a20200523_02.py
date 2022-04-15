@@ -43,11 +43,11 @@ class a20200523_02(Scene):
         self.play(FadeOut(title))
 
 def title_6_setup():
-    text = TexMobject(r"""C - P &= {1 \over r} \Big[ p [ C_u - P_u ] + (1-p) [ C_d - P_d ] \Big] """)
+    text = Tex(r"""C - P &= {1 \over r} \Big[ p [ C_u - P_u ] + (1-p) [ C_d - P_d ] \Big] """)
     return text
 
 def title_5_setup():
-    text = TexMobject(r"""C &= {1 \over r} \Big[ p C_u + (1-p) C_d \Big] \\ 
+    text = Tex(r"""C &= {1 \over r} \Big[ p C_u + (1-p) C_d \Big] \\ 
         - P &= {1 \over r} \Big[ p P_u + (1-p) P_d \Big] """)
     return text
 
@@ -57,7 +57,7 @@ def title_4_setup():
 
 
 def title_3_setup():
-    text = TexMobject(r"P = {1 \over r} \Big[ p P_u + (1-p) P_d \Big] ")
+    text = Tex(r"P = {1 \over r} \Big[ p P_u + (1-p) P_d \Big] ")
     return text
         
 def title_2_setup():
@@ -72,23 +72,23 @@ def title_1_setup():
 
 def setup():
 
-    SS = TexMobject("S")
-    SS_u = TexMobject("u S")
-    SS_d = TexMobject("d S")
+    SS = Tex("S")
+    SS_u = Tex("u S")
+    SS_d = Tex("d S")
 
     tmp = VGroup(SS_u, SS_d).arrange_submobjects(DOWN, buff=1)
     S = VGroup(SS, tmp).arrange_submobjects(RIGHT, buff=1)
 
-    rr = TexMobject("1")
-    rr_u = TexMobject("r")
-    rr_d = TexMobject("r")
+    rr = Tex("1")
+    rr_u = Tex("r")
+    rr_d = Tex("r")
 
     tmp = VGroup(rr_u, rr_d).arrange_submobjects(DOWN, buff=1)
     r = VGroup(rr, tmp).arrange_submobjects(RIGHT, buff=1)
 
-    CC = TexMobject("?")
-    CC_u = TexMobject("P_u")
-    CC_d = TexMobject("P_d")
+    CC = Tex("?")
+    CC_u = Tex("P_u")
+    CC_d = Tex("P_d")
 
     tmp = VGroup(CC_u, CC_d).arrange_submobjects(DOWN, buff=1)
     C = VGroup(CC, tmp).arrange_submobjects(RIGHT, buff=1)

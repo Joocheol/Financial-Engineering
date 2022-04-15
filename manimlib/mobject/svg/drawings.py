@@ -13,7 +13,7 @@ from manimlib.mobject.geometry import Rectangle
 from manimlib.mobject.geometry import Square
 from manimlib.mobject.mobject import Mobject
 from manimlib.mobject.svg.svg_mobject import SVGMobject
-from manimlib.mobject.svg.tex_mobject import TexMobject
+from manimlib.mobject.svg.tex_mobject import Tex
 from manimlib.mobject.svg.tex_mobject import TextMobject
 from manimlib.mobject.three_dimensions import Cube
 from manimlib.mobject.types.vectorized_mobject import VGroup
@@ -102,7 +102,7 @@ class Speedometer(VMobject):
         for index, angle in enumerate(tick_angle_range):
             vect = rotate_vector(RIGHT, angle)
             tick = Line((1 - self.tick_length) * vect, vect)
-            label = TexMobject(str(10 * index))
+            label = Tex(str(10 * index))
             label.set_height(self.tick_length)
             label.shift((1 + self.tick_length) * vect)
             self.add(tick, label)

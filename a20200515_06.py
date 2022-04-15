@@ -11,7 +11,7 @@ class a20200515_06(Scene):
              + {n \choose j} \Big( {1 \over n} \Big)^j + \cdots
              + \Big( {1 \over n} \Big)^n   
         """.split()
-        f_1 = TexMobject(*string)
+        f_1 = Tex(*string)
 
         F = VGroup(f_1)
         F.arrange_submobjects(DOWN, buff=0.5)

@@ -63,7 +63,7 @@ class a20200421(Scene):
             rect_UP[i].move_to(UP*(3-i)+LEFT*0).scale(0.7)
             self.play(Transform(grid.copy(), rect_UP[i]), run_time = 0.5)
 
-        text3 = TexMobject("\\vdots")
+        text3 = Tex("\\vdots")
         text3.move_to(LEFT*0)
         self.play(Write(text3))
         rect_DOWN = [Rectangle(height=1, width=1) for _ in range(3)]
@@ -85,7 +85,7 @@ class a20200421(Scene):
             rect_UP[i].move_to(UP*(3-i)+RIGHT*3.5).scale(0.7)
             self.play(Transform(grid.copy(), rect_UP[i]), run_time = 0.5)
 
-        text3 = TexMobject("\\vdots")
+        text3 = Tex("\\vdots")
         text3.move_to(RIGHT*3.5)
         self.play(Write(text3))
         rect_DOWN = [Rectangle(height=1, width=1) for _ in range(3)]

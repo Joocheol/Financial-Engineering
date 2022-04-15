@@ -1,5 +1,5 @@
 from manimlib.constants import *
-from manimlib.mobject.svg.tex_mobject import SingleStringTexMobject
+from manimlib.mobject.svg.tex_mobject import SingleStringTex
 from manimlib.mobject.types.vectorized_mobject import VMobject
 
 
@@ -34,13 +34,13 @@ class DecimalNumber(VMobject):
                 num_string = num_string[1:]
 
         self.add(*[
-            SingleStringTexMobject(char, **kwargs)
+            SingleStringTex(char, **kwargs)
             for char in num_string
         ])
 
         # Add non-numerical bits
         if self.show_ellipsis:
-            self.add(SingleStringTexMobject("\\dots"))
+            self.add(SingleStringTex("\\dots"))
 
         if num_string.startswith("-"):
             minus = self.submobjects[0]
@@ -50,7 +50,7 @@ class DecimalNumber(VMobject):
             )
 
         if self.unit is not None:
-            self.unit_sign = SingleStringTexMobject(self.unit, color=self.color)
+            self.unit_sign = SingleStringTex(self.unit, color=self.color)
             self.add(self.unit_sign)
 
         self.arrange(

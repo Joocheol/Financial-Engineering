@@ -22,43 +22,43 @@ class a20200529_19(GraphScene):
 
         string = r"""\max ( S_T - K , 0 )"""
         string = string.split()
-        call_long = TexMobject(*string)
+        call_long = Tex(*string)
 
         string = r"""-\max ( S_T - K , 0 )"""
         string = string.split()
-        call_short = TexMobject(*string)
+        call_short = Tex(*string)
 
         string = r"""\max ( K - S_T , 0 )"""
         string = string.split()
-        put_long = TexMobject(*string)
+        put_long = Tex(*string)
 
         string = r"""-\max ( K - S_T , 0 )"""
         string = string.split()
-        put_short = TexMobject(*string)
+        put_short = Tex(*string)
 
         string = r"""S_T - K"""
         string = string.split()
-        forward_long = TexMobject(*string)
+        forward_long = Tex(*string)
 
         string = r"""K - S_T"""
         string = string.split()
-        forward_short = TexMobject(*string)
+        forward_short = Tex(*string)
 
         string = r"""S_T"""
         string = string.split()
-        asset_long = TexMobject(*string)
+        asset_long = Tex(*string)
 
         string = r"""-S_T"""
         string = string.split()
-        asset_short = TexMobject(*string)
+        asset_short = Tex(*string)
 
         string = r"""K"""
         string = string.split()
-        money_long = TexMobject(*string)
+        money_long = Tex(*string)
 
         string = r"""-K"""
         string = string.split()
-        money_short = TexMobject(*string)
+        money_short = Tex(*string)
 
 #### Graphs
 
@@ -116,7 +116,7 @@ class a20200529_19(GraphScene):
         self.wait()
 
         title = TextMobject("Cost: ").scale(0.7).to_edge(DL, buff=1)
-        cost = TexMobject("0").scale(0.7).next_to(title, RIGHT)
+        cost = Tex("0").scale(0.7).next_to(title, RIGHT)
         self.play(Write(title))
         self.play(Write(cost))
         self.wait()
@@ -127,13 +127,13 @@ class a20200529_19(GraphScene):
     #     self.play(ShowCreation(s_long))
     #     self.wait(2)
 
-    #     text = TexMobject("- S_0 r")
+    #     text = Tex("- S_0 r")
     #     self.play(Write(text.next_to(asset_long, DOWN)))
     #     self.wait(2)
     #     self.play(ShowCreation(m_short_5))
     #     self.wait(2)
 
-    #     text_2 = TexMobject("S_T - S_0 r")
+    #     text_2 = Tex("S_T - S_0 r")
     #     self.play(
     #         ReplacementTransform(asset_long, text_2.to_edge(LEFT, buff=1)), 
     #         ReplacementTransform(text, text_2.to_edge(LEFT, buff=1)))
@@ -152,7 +152,7 @@ class a20200529_19(GraphScene):
     #     self.play(ReplacementTransform(f_long_5.copy(), s_long), ReplacementTransform(f_long_5, m_short_5))
     #     self.wait(2)
         
-    #     text_2 = TexMobject("S_T - S_0 r")
+    #     text_2 = Tex("S_T - S_0 r")
     #     self.play(Write(text_2.next_to(forward_long, DOWN)))
     #     self.wait(2)
          

@@ -9,7 +9,7 @@ class Pascal_s_triangle(Scene):
         for i in range(1,8):
             for j in range(i+1):
                 binom = int(math.factorial(i)/(math.factorial(j) * math.factorial(i-j)))
-                f = TexMobject("{}".format(binom))
+                f = Tex("{}".format(binom))
                 f.move_to([0,4,0] + DOWN*i + RIGHT*(j-i/2))
                 self.play(Write(f), run_time = 0.2)
                 b_all.append(f)
@@ -21,7 +21,7 @@ class Pascal_s_triangle(Scene):
 
         for i in range(1,8):
             for j in range(i+1):
-                f = TexMobject("{} \\choose {}".format(i, j))
+                f = Tex("{} \\choose {}".format(i, j))
                 f.move_to([0,4,0] + DOWN*i + RIGHT*(j-i/2)).scale(0.7)
                 #self.play(Write(f), run_time = 0.3)
                 c_all.append(f)

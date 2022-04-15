@@ -8,11 +8,11 @@ class a20200522_04(Scene):
         self.play(Write(title_1))
         #self.wait()
 
-        x_equal = TexMobject("x = ")
+        x_equal = Tex("x = ")
         x_mat = Matrix([5,8,10,"\\vdots",6.5], element_alignment_corner=DOWN)
         obj_1 = VGroup(x_equal,x_mat).arrange_submobjects()
 
-        y_equal = TexMobject("y = ") 
+        y_equal = Tex("y = ") 
         obj_1 = VGroup(obj_1,y_equal).arrange_submobjects(buff=1)
 
         y_mat = Matrix([21,31,40.8,"\\vdots",63], element_alignment_corner=DOWN)
@@ -28,7 +28,7 @@ class a20200522_04(Scene):
 
 ####
 
-        code_1 = TexMobject(r"\texttt{Dense(1, input\textunderscore shape=[1])} ")
+        code_1 = Tex(r"\texttt{Dense(1, input\textunderscore shape=[1])} ")
         code_1.scale(0.7).to_edge(RIGHT, buff=1)
 
         self.play(ShowCreation(code_1))
@@ -42,11 +42,11 @@ class a20200522_04(Scene):
         self.play(ReplacementTransform(title_1, title_2))
         #self.wait()
 
-        x_equal = TexMobject("x = ")
+        x_equal = Tex("x = ")
         x_mat = Matrix( [ [5,2],  [4,6], "\\vdots", [8,8] ], element_alignment_corner=DOWN )
         obj_2 = VGroup(x_equal,x_mat).arrange_submobjects()
 
-        y_equal = TexMobject("y = ") 
+        y_equal = Tex("y = ") 
         obj_2 = VGroup(obj_2,y_equal).arrange_submobjects(buff=1)
 
         y_mat = Matrix([21,31,"\\vdots",63], element_alignment_corner=DOWN)
@@ -59,7 +59,7 @@ class a20200522_04(Scene):
 
 ####
 
-        code_2 = TexMobject(r"\texttt{Dense(1, input\textunderscore shape=[2])} ")
+        code_2 = Tex(r"\texttt{Dense(1, input\textunderscore shape=[2])} ")
         code_2.scale(0.8).to_edge(RIGHT, buff=1)
 
         self.play(ReplacementTransform(code_1, code_2))
@@ -74,17 +74,17 @@ class a20200522_04(Scene):
         self.play(ReplacementTransform(title_2, title_3))
         self.wait()
 
-        x_equal = TexMobject("x = ")
+        x_equal = Tex("x = ")
         x_mat = Matrix( [ [5,2,0],  [4,1,6], "\\vdots", [8,8,6] ], element_alignment_corner=DOWN )
         obj_3 = VGroup(x_equal,x_mat).arrange_submobjects()
 
-        y_equal = TexMobject("y = ") 
+        y_equal = Tex("y = ") 
         obj_3 = VGroup(obj_3,y_equal).arrange_submobjects(buff=1)
 
         y_mat = Matrix(['cat','dog',"\\vdots",'dog'], element_alignment_corner=DOWN)
         obj_3 = VGroup(obj_3,y_mat).arrange_submobjects()
 
-        equal_sign = TexMobject("=")
+        equal_sign = Tex("=")
         obj_3 = VGroup(obj_3,equal_sign).arrange_submobjects()
 
         y_mat_2 = Matrix([[1,0],[0,1],"\\vdots",[0,1]], element_alignment_corner=DOWN)
@@ -98,8 +98,8 @@ class a20200522_04(Scene):
 
 ####
 
-        code_3 = TexMobject(r"\texttt{Dense(1, input\textunderscore shape=[3])} ")
-        code_4 = TexMobject(r"\texttt{Dense(2)} ")
+        code_3 = Tex(r"\texttt{Dense(1, input\textunderscore shape=[3])} ")
+        code_4 = Tex(r"\texttt{Dense(2)} ")
 
         code_5 = VGroup(code_3, code_4).arrange_submobjects(DOWN, aligned_edge=LEFT)
         code_5.scale(0.7).to_edge(RIGHT, buff=1)

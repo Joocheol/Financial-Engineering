@@ -12,8 +12,8 @@ class FunctionTracker(Scene):
         x_tex = DecimalNumber(x_value.get_value()).add_updater(lambda v: v.set_value(x_value.get_value()))
         fx_tex = DecimalNumber(fx_value.get_value()).add_updater(lambda v: v.set_value(fx(x_value)))
         # TeX labels definition
-        x_label = TexMobject("x = ")
-        fx_label = TexMobject("x^2 = ")
+        x_label = Tex("x = ")
+        fx_label = Tex("x^2 = ")
         # Grouping of labels and numbers
         group = VGroup(x_tex,fx_tex,x_label,fx_label).scale(2.6)
         VGroup(x_tex, fx_tex).arrange_submobjects(DOWN,buff=3)
@@ -48,8 +48,8 @@ class FunctionTrackerWithNumberLine(Scene):
         x_tex = DecimalNumber(x_value.get_value()).add_updater(lambda v: v.set_value(x_value.get_value()))
         fx_tex = DecimalNumber(fx_value.get_value()).add_updater(lambda v: v.set_value(fx(x_value)))
         # TeX labels definition
-        x_label = TexMobject("x = ")
-        fx_label = TexMobject("x^2 = ")
+        x_label = Tex("x = ")
+        fx_label = Tex("x^2 = ")
         # Grouping of labels and numbers
         group = VGroup(x_tex,fx_tex,x_label,fx_label).scale(2)
         # Set the labels position
@@ -97,7 +97,7 @@ class FunctionTrackerWithNumberLine(Scene):
         labels = VGroup()
         x_max = number_line.x_max
         for x in range(x_min,x_max+1,step_label):
-            x_label = TexMobject(f"{x}",**tex_kwargs)
+            x_label = Tex(f"{x}",**tex_kwargs)
             # See manimlib/mobject/number_line.py CONFIG dictionary
             x_label.next_to(number_line.number_to_point(x),DOWN,buff=buff)
             labels.add(x_label)
@@ -105,7 +105,7 @@ class FunctionTrackerWithNumberLine(Scene):
 
     def get_number_line_group(self,label,x_max,unit_size,v_tracker,step_label=1,**number_line_config):
         # Set the Label (x,or x**2)
-        number_label = TexMobject(label)
+        number_label = Tex(label)
         # Set the arrow 
         arrow = Arrow(UP,DOWN,buff=0).set_height(0.5)
         # Set the number_line

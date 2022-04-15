@@ -3,7 +3,7 @@ from manimlib.imports import *
 class a20200506_13(Scene):
     def construct(self):
 
-        f_1 = TexMobject(
+        f_1 = Tex(
             "{n \\choose k} &= { {n!} \\over {k! (n-k)!} } \\\ ",
             "&= {", 
             " n ", 

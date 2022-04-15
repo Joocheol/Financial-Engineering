@@ -2,7 +2,7 @@ from manimlib.imports import *
 
 class aritmetik2(Scene):
     def construct(self):
-        skouer_digomp = TexMobject(
+        skouer_digomp = Tex(
             "3960",
             "=",
             "2",
@@ -20,15 +20,15 @@ class aritmetik2(Scene):
             "11"
         )
 
-        skouer_digomp_echu_simplaet = TexMobject("2^3", "\\times", "3^2", "\\times", "5", "\\times", "11")
+        skouer_digomp_echu_simplaet = Tex("2^3", "\\times", "3^2", "\\times", "5", "\\times", "11")
 
         etre_digomp = [
-            TexMobject("2", "\\times", "1980"),
-            TexMobject("2", "\\times", "990"),
-            TexMobject("2", "\\times", "495"),
-            TexMobject("3", "\\times", "165"),
-            TexMobject("3", "\\times", "55"),
-            TexMobject("5", "\\times", "11"),
+            Tex("2", "\\times", "1980"),
+            Tex("2", "\\times", "990"),
+            Tex("2", "\\times", "495"),
+            Tex("3", "\\times", "165"),
+            Tex("3", "\\times", "55"),
+            Tex("5", "\\times", "11"),
         ]
 
         for i in range(5):

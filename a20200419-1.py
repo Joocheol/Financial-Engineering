@@ -3,24 +3,24 @@ from manimlib.imports import *
 class a20200419_1(Scene):
     def construct(self):
 
-        SS = TexMobject("S")
-        SS_u = TexMobject("u S")
-        SS_d = TexMobject("d S")
+        SS = Tex("S")
+        SS_u = Tex("u S")
+        SS_d = Tex("d S")
         SS.scale(0.7).move_to(LEFT*6+UP*2.5)
         SS_u.scale(0.7).move_to(LEFT*5+UP*3.5)
         SS_d.scale(0.7).move_to(LEFT*5+UP*1.5)
 
         
-        rr = TexMobject("1")
-        rr_u = TexMobject("r")
-        rr_d = TexMobject("r")
+        rr = Tex("1")
+        rr_u = Tex("r")
+        rr_d = Tex("r")
         rr.scale(0.7).move_to(LEFT*1+UP*2.5)
         rr_u.scale(0.7).move_to(RIGHT*0+UP*3.5)
         rr_d.scale(0.7).move_to(RIGHT*0+UP*1.5)
 
-        CC = TexMobject("?")
-        CC_u = TexMobject("C_u")
-        CC_d = TexMobject("C_d")
+        CC = Tex("?")
+        CC_u = Tex("C_u")
+        CC_d = Tex("C_d")
         CC.scale(0.7).move_to(RIGHT*4+UP*2.5)
         CC_u.scale(0.7).move_to(RIGHT*5+UP*3.5)
         CC_d.scale(0.7).move_to(RIGHT*5+UP*1.5)
@@ -45,7 +45,7 @@ class a20200419_1(Scene):
         rect3.move_to(RIGHT*5+UP*2.5)
         self.play(ShowCreation(rect3))
 
-        formula_1 = TexMobject(r"""
+        formula_1 = Tex(r"""
             \begin{bmatrix} uS \\ \\ dS \end{bmatrix}
             \times
             \Delta
@@ -61,7 +61,7 @@ class a20200419_1(Scene):
         self.play(Write(formula_1))
         self.wait(2)
 
-        formula_2 = TexMobject(r"""
+        formula_2 = Tex(r"""
             \Delta 
             =
             {C_u - C_d 
@@ -99,7 +99,7 @@ class a20200419_1(Scene):
 
         self.play(Transform(formula_1, formula_2.move_to(UP).scale(0.5)))
 
-        formula_3 = TexMobject(r"""
+        formula_3 = Tex(r"""
             C = S \times 
             \Delta
             +
@@ -108,7 +108,7 @@ class a20200419_1(Scene):
             B
         """)
 
-        formula_3_1 = TexMobject(r"""
+        formula_3_1 = Tex(r"""
             C = S \times 
             \Delta
             +
@@ -120,7 +120,7 @@ class a20200419_1(Scene):
         self.wait(2)
         self.play(Transform(formula_3, formula_3_1.move_to(UP*0.5).scale(0.5)))
 
-        formula_4 = TexMobject(r"""
+        formula_4 = Tex(r"""
             C = S \times 
             {C_u - C_d 
             \over
@@ -135,7 +135,7 @@ class a20200419_1(Scene):
         self.play(Write(formula_4.shift(DOWN*1)))
         self.wait(2)
 
-        formula_5 = TexMobject(r"""
+        formula_5 = Tex(r"""
             = 
             {1 \over r}
             \Big[

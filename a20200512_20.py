@@ -30,8 +30,8 @@ class a20200512_20(GraphScene):
         x_tex = DecimalNumber(x_value.get_value()).add_updater(lambda v: v.set_value(x_value.get_value()))
         fx_tex = DecimalNumber(fx_value.get_value(), num_decimal_places = 10).add_updater(lambda v: v.set_value(fx(x_value)))
         # TeX labels definition
-        x_label = TexMobject("x = ")
-        fx_label = TexMobject("f(x) = ")
+        x_label = Tex("x = ")
+        fx_label = Tex("f(x) = ")
         # Grouping of labels and numbers
         group = VGroup(x_tex,fx_tex,x_label,fx_label).scale(1)
         VGroup(x_tex, fx_tex).arrange_submobjects(DOWN)
@@ -70,7 +70,7 @@ class a20200512_20(GraphScene):
             f(x) = {{1} \over {1 + e^{-x}}}
         """
         string = string.split()
-        f_1 = TexMobject(*string)
+        f_1 = Tex(*string)
         f_1.to_edge(LEFT, buff=1)
 
         self.play(Write(f_1))
